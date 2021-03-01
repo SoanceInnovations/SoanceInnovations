@@ -6,11 +6,8 @@
     <title>soance | Digital Marketing Agency</title>
     <meta charset="utf-8">
     <meta name="author" content="soance">
-    <meta name="description" content="Award winning digital agency specialising in UX Design, Digital product creation, Digital Transformation">
-    <meta name="keywords" content=" PHP experts in UK ,Woo-commerce experts in London,Woo-commerce experts in UK,top front end development UK,top front end development London ">
     <!-- <meta name="something" content="something"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="google-site-verification" content="n8FQbjhjqrxP0pk9SqbYrdaQOPy2tDoTxGciSMU8vrk" />
 
     <!-- styles -->
     <!-- bootstrap -->
@@ -56,12 +53,10 @@
         </div>
     </div>
 
-
     <main class="master_wrap animated fadeIn home_page">
 
-
         <!-- header -->
-        <section class="header_section header_home stick fixed">
+        <section class="header_section stick inner-header fixed">
             <div class="container">
                 <div class="logo_wrp">
                     <a href="/" class="logo-white"><img src="images/soance_white.png"></a>
@@ -75,9 +70,9 @@
                 <div class="nav_wrap ">
                     <div class="nav_inner">
                         <ul>
-                            <li class="active"><a href="/">HOME</a></li>
+                            <li><a href="/">HOME</a></li>
                             <li><a href="about.html">ABOUT</a></li>
-                            <li><a href="works.html">Works</a></li>
+                            <li class="active"><a href="works.html">Works</a></li>
                             <li><a href="contact.html">CONTACT</a></li>
                         </ul>
 
@@ -100,9 +95,9 @@
             <div class="nav_wrap ">
                 <div class="nav_inner">
                     <ul>
-                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="works.html">Works</a></li>
+                        <li class="active"><a href="works.html">Works</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                     <div class="nav_bottom">
@@ -113,81 +108,17 @@
         </section>
         <!-- ./header -->
 
-        <!-- banner -->
-        <section class="banner_section banner_home">
-            <div class="banner_wrp_outer" style="background: url(images/) no-repeat center/cover ">
-                <div class="banner_content_outer" style="background: url(images/bg-1.jpg) no-repeat center/cover ">
-                </div>
-                <div class="banner_text">
-                    <div class="container">
-                        <h1>WE BUILD SIMPLE YET POWERFUL<br>DIGITAL PRODUCTS ON AI</h1>
-                    </div>
-                </div>
-                <div id="home-center" class="element_fade_in">
-                    <div class="container">
-                        <a href="#section-1" class="scrollToBottom scroll-up">
-		                    scroll down
-		                </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ./banner -->
 
-        <section id="section_one" class="creative_text">
-            <div class="container">
-                <h2>CREATIVE CODERS</h2>
-                <p>We are collaborative dialogue, visionary thinking and a consistent creative integrity. Combining our expertise in creative thinking, design-led outcomes and high-end production we develop compelling work that sets us apart.</p>
-                <a href="contact.html" class="say_hello">SAY A HELLO</a>
-            </div>
-        </section>
-
-
-        <!-- OUR SERVICES SECTION -->
-        <section class="our_services_section">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2>OUR SERVICES</h2>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <ul>
-                            <li>
-                                <a href="#">BRANDING</a>
-                            </li>
-                            <li>
-                                <a href="#">DIGITAL DESIGNS</a>
-                            </li>
-                            <li>
-                                <a href="#">UX/UI</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <ul>
-                            <li>
-                                <a href="#">WEB APPLICATIONS</a>
-                            </li>
-                            <li>
-                                <a href="#">E-COMMERCE WEBSITES</a>
-                            </li>
-                            <li>
-                                <a href="#">NATIVE APPS</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 col-sm-3 col-xs-6">
-                        <ul>
-                            <li>
-                                <a href="#">ARTIFICIAL INTELLIGENCE</a>
-                            </li>
-                            <li>
-                        </ul>
-                    </div>
+        <content class="inner-content">
+            <!-- WORKS SECTION -->
+            <section class="works_listing_section">
+                <div class="container">
+                    We do not have any
                 </div>
-            </div>
-        </section>
-        <!--/OUR SERVICES SECTION -->
+            </section>
+            <!-- ./WORK SECTION -->
+
+        </content>
         <!-- footer section -->
         <section class="footer_section">
             <div class="container">
@@ -237,7 +168,7 @@
 
     <!-- OWL Carousel -->
     <script src="js/owl.carousel.min.js"></script>
-    <script src="js/typed.js" type="text/javascript"></script>
+
 
     <!-- WOW js -->
 
@@ -246,22 +177,9 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            // $('.banner_content_outer').iosParallax({
-            //   movementFactor: 20
-            // });
-
-
-
-            Typed.new("#typed", {
-                stringsElement: document.getElementById('typed-strings'),
-                typeSpeed: 100,
-                loop: false,
-                contentType: 'html', // or text
-                // defaults to null for infinite loop
-                loopCount: null,
+            $('.banner_content_outer').iosParallax({
+                movementFactor: 20
             });
-
-
 
             $('.owl-carousel').owlCarousel({
                 loop: true,
@@ -271,22 +189,6 @@
                 items: 1
 
             })
-
-
-            jQuery('.go_next').click(function() {
-
-                jQuery('html,body').animate({
-                    scrollTop: jQuery('.work_section').offset().top
-                }, 1000);
-
-                return false;
-
-                e.preventDefault();
-
-            });
-
-
-
 
         });
     </script>

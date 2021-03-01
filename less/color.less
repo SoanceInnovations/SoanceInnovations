@@ -1,0 +1,118 @@
+
+@white: #fff;
+@black: #000;
+@theme_red: #f0116a;
+@theme_2: #dbfb7b;
+@theme_3: #88fae3;
+@theme_blue: #1b0851;
+@theme_blue2: #000066
+@theme_4: #001534;
+@grey: #8D8D8F;
+@dark_grey: #484849;
+@soft_grey: #c6c6c6;
+@light_grey: #ddd;
+@green_1:#00ff72;
+@blue_1: #0000ff;
+@theme_orang: #ff6600;
+@theme_pink: #ff33ff;
+@theme_pink_2: #f9207a;
+@soft_black: #4b4a4a;
+@soft_pink: #eae6ea;
+
+
+
+/* ======================== */
+
+body{
+	background-color: @white;
+}
+::selection{
+	color: @theme_red;
+	background-color: @theme_blue;
+}
+::-moz-selection{
+	color: @theme_red;
+	background-color: @theme_blue;
+}
+::-ms-selection{
+	color: @theme_red;
+	background-color: @theme_blue;
+}
+
+/* ======================== */
+
+#nav_icon span{background-color: @theme_red;}
+#nav_icon.active span{background-color: @theme_blue;}
+/* home ===== */
+.go_next{border-color: @theme_red;}
+.banner_content h1{color: @white;}
+.banner_content h1 span{color: @white;}
+.work_content h3{color: @white;}
+.work_content_left h2 a{color: @white;}
+.work_content_left h2 a:hover{color: @theme_blue;}
+.work_content_left h2 a:after{color: @white;}
+.partners_content p{color: @black;}
+.partners_content h3{color: @black;}
+.partners_content a{color: @black;}
+.partners_content a:hover{background-color: @theme_blue;color: @white;}
+.partners_left{background-color: @theme_blue;}
+.partners_right{background-color: @theme_red;}
+.shadow_div:after{background: @theme_2; background: -webkit-linear-gradient(bottom left,@theme_2, @theme_3);background: -o-linear-gradient(bottom left,@theme_2, @theme_3); background: -moz-linear-gradient(bottom left,@theme_2, @theme_3); background: linear-gradient(bottom left, @theme_2, @theme_3); }
+.work_content_right .shadow_div:before{background: @theme_2;background: -webkit-linear-gradient(top right,@theme_2, @theme_3);background: -o-linear-gradient(top right,@theme_2, @theme_3);background: -moz-linear-gradient(top right,@theme_2, @theme_3);background: linear-gradient(top right, @theme_2, @theme_3);}
+.partners_item h4,.partners_item label,.partners_item a{color: #fff;}
+.testimonial_slider.shadow_div:after{background: @green_1; background: -webkit-linear-gradient(bottom left,@green_1, @theme_blue);background: -o-linear-gradient(bottom left,@green_1, @theme_blue); background: -moz-linear-gradient(bottom left,@green_1, @theme_blue); background: linear-gradient(bottom left, @green_1, @theme_blue); }
+.testimonial_slider.shadow_div:before{background: @green_1;background: -webkit-linear-gradient(top right,@green_1, @theme_blue);background: -o-linear-gradient(top right,@green_1, @theme_blue);background: -moz-linear-gradient(top right,@green_1, @theme_blue);background: linear-gradient(top right, @green_1, @theme_blue);}
+.footer_section{background-color: @theme_blue;}
+.footer_section a, .footer_section span{color: @white;}
+.footer_section span a{border-color: @white;}
+.each_wrk_wrp h3 {color: @theme_blue;}
+.each_wrk_wrp:before{background-color: @blue_1;}
+.each_wrk_wrp:hover h3 {color: @white;}
+.each_wrk_wrp:after{background: @theme_2; background: -webkit-linear-gradient(bottom left,@theme_2, @theme_red);background: -o-linear-gradient(bottom left,@theme_2, @theme_red); background: -moz-linear-gradient(bottom left,@theme_2, @theme_red); background: linear-gradient(bottom left, @theme_2, @theme_red); }
+.detl_content h2{color: @theme_blue;}
+.detl_content p{color: @dark_grey;}
+.each_detls_wrap.style_2{background-color: @theme_blue;}
+.each_detls_wrap.style_2 .detl_content p,
+.each_detls_wrap.style_2 .detl_content h2{color: @white;}
+.wrok_brief_section{background: @theme_orang; background: -webkit-linear-gradient(bottom left,@theme_orang, @theme_pink_2);background: -o-linear-gradient(bottom left,@theme_orang, @theme_pink_2); background: -moz-linear-gradient(bottom left,@theme_orang, @theme_pink_2); background: linear-gradient(bottom left, @theme_orang, @theme_pink_2); }
+.brie_content h4{color: @dark_grey;}
+.brie_content p{color: @soft_black;}
+.share_it a{color: @white;}
+.nav_wrap{background: @theme_orang; background: -webkit-linear-gradient(bottom left,@theme_orang, @theme_red, @theme_pink_2);background: -o-linear-gradient(bottom left,@theme_orang, @theme_red, @theme_pink_2); background: -moz-linear-gradient(bottom left,@theme_orang, @theme_red, @theme_pink_2); background: linear-gradient(bottom left, @theme_orang, @theme_red, @theme_pink_2); }
+.nav_wrap  a{color: @theme_blue;}
+.nav_wrap  a:hover{color: @white;}
+.about_top_banner h3,.about_top_banner h4,.about_top_banner span{color: @white;}
+.about_top_banner p span b{color: @theme_red;}
+.milestone_content h4,.milestone_content p{color: @white;}
+.milestone_content:before{border-color: @theme_red;}
+.milestone_content:after{border-color: @white;}
+.go_to_work a{color: @theme_blue;}
+.go_to_work a:before{background-color: @theme_red;}
+.contact_top h3,.contact_top p,.contact_form_outer h3,
+.contact_form_outer button,.mail_us_inner h4,.contact_form_outer .form-control{color: @white;}
+.contact_form_outer button{background-color: @theme_red;}
+.contact_form_outer h3:after{background-color: @theme_red;}
+.mail_us{background-color: @theme_blue;}
+.mail_us_inner h4 a{color: @white;}
+.detl_content a{color: @soft_black; border-color: @soft_black;}
+.project_nav_wrp h3 a,.project_nav_wrp h3 a span{color: @white;}
+.project_nav_wrp{background: @theme_orang; background: -webkit-linear-gradient(bottom left,@theme_orang, @theme_red, @theme_pink_2);background: -o-linear-gradient(bottom left,@theme_orang, @theme_red, @theme_pink_2); background: -moz-linear-gradient(bottom left,@theme_orang, @theme_red, @theme_pink_2); background: linear-gradient(bottom left, @theme_orang, @theme_red, @theme_pink_2); }
+.project_form_wrap button{background-color: @theme_blue;color: @white;}
+.form-group label{color: @grey;}
+.form-group label sup{color: @theme_red;}
+.form-control:focus{border-color: @theme_red; box-shadow: none;}
+.adrs_wrp h3 a{color: @black;}
+.adrs_wrp p span{color: @black;}
+.adrs_wrp p a{color: @grey;}
+.adrs_wrp > a{color: @black;}
+.vacancy_wrp a p, .vacancy_wrp a span{color: @white;}
+.careet_work_at a,.vacancy_wrp a{background-color: @theme_blue; color: @white;}
+.careet_work_at a:hover,.vacancy_wrp a:hover{background-color: @theme_red; color: @white;}
+.career_left h4:hover a{color: @theme_red;}
+.form_wrp{background-color: @soft_pink;}
+.form_wrp button{background-color: @dark_grey; color: @white}
+.form_wrp label.upload{background-color: @theme_blue;color: @white;}
+.contact_top h3{color: @theme_blue;}
+.contact_top h4 a{color: @theme_blue;}
+.contact_top p{color: @soft_black;}
+.form_inner_wrp{background: @theme_blue;}

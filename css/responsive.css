@@ -1,0 +1,223 @@
+@media screen and (min-width:1440px){.about_top_banner{//min-height:50vh;}
+.about_bottom_banner{background-size:100% 100%!important;}
+}
+@media screen and (min-width:1600px){.about_top_banner p{padding-top:200px;}
+.about_top_banner{min-height:25vh;}
+.mail_us{margin-bottom:200px;}
+.pro_name h3{
+   font-size: 27px;
+   letter-spacing: 4px;
+}
+}
+@media screen and (min-width:1720px){
+.pro_name h3{
+   font-size: 32px;
+   letter-spacing: 4px;
+}
+.pro_qualification{
+	min-height: 100% !important;
+}
+
+}
+@media screen and (min-width:1900px){.about_top_banner{min-height:50vh;}
+.pro_name h3{
+   font-size: 34px;
+   letter-spacing: 5px;
+}
+}
+@media screen and (min-width:2500px){.about_top_banner{min-height:40vh;}
+}
+@media screen and (min-width:3000px){.about_top_banner{min-height:0vh;}
+}
+@media screen and (max-width:1920px){}
+@media screen and (max-width:1600px){}
+@media screen and (max-width:1400px){}
+@media screen and (max-width:1200px){
+	.detailed_section{padding: 0 50px;}
+.nav_wrap.open ul li a{font-size:36px;}
+.nav_wrap p a{font-size:32px;}
+.work_content_left h2 a{font-size:40px;}
+.testimonial_slider .owl-next{right:-70px;}
+.testimonial_slider .owl-prev{left:-70px;}
+/*.footer_section .container{width:100%;}*/
+.about_top_banner p{padding-top:50px;}
+.about_top_banner p span{font-size:42px;padding:0 30px;}
+.vdo_section{padding:0;}
+.about_banner_section{padding:0 50px;}
+.about_us_section{padding:0 50px;}
+.contact_section{padding:0 50px;}
+.contact_wrp{padding:50px;}
+.career_section{padding: 0 50px;}
+.vacancy_wrp{padding: 50px 0;}
+
+.pro_qualification span{
+	f
+}
+}
+@media screen and (max-width:1080px){.partners_wrp .col-md-6{width:100%;float:none;}
+.partners_item h4{padding-bottom:20px;}
+.about_content_wrap{background-size:cover !important;}
+.wrok_brief_section{padding:80px 30px;}
+}
+@media screen and (max-width:992px){
+	.stick.fixed{padding-right: 20px;}
+	.form_parent{height: auto;display: block; padding: 50px;}
+	.contct_img{height: auto;}
+	.contct_img img{position: static;width: 100%;}
+	.career_right{padding: 20px 0;}
+	#contactForm{display: block;}
+	.banner_section{padding:0;}
+.form-group span{bottom: -17px;}
+.banner_content{text-align:center;right:auto;left:50%;transform:translate(-50%, -50%);}
+.work_content h3{padding-bottom:50px;}
+.work_content_left{padding-bottom:50px;}
+.partners_content p{font-size:28px;}
+.partners_wrp{padding:0 20px;}
+.footer_section span a{margin-right:0px;}
+.about_top_banner p span{font-size:36px;padding:0 25px;}
+.about_top_banner h4{font-size:32px;}
+.about_us_section h3{font-size:26px;text-align:center;}
+.about_content h4{font-size:26px;}
+.about_content{padding-bottom:30px;}
+.about_us_section .row{padding:0;text-align:center;}
+.about_us_section{padding-bottom:100px;}
+.about_top_banner{padding:0 30px;}
+.about_content_wrap{padding-top:30px;}
+.works_listing_section li.each_wrok{padding:0 10px;margin-bottom:75px;}
+.each_wrk_wrp:hover:after{top:20px;left:20px;}
+.detl_content h2{font-size:42px;}
+.detl_content{padding:50px 15px;}
+.brie_content{padding:0 20px;}
+.brief_inner{padding:30px 0;}
+.wrok_brief_section{padding:50px 30px;}
+.about_banner_section{padding:0 30px;}
+.project_form h2{font-size:32px;}
+.footer_section span a{padding:10px 20px;font-size: 17px;}
+.footer_section{padding:50px 30px;}
+.go_to_work{text-align:center;}
+.header_section{padding-left: 20px;}
+#nav_icon{right: 20px;}
+}
+@media screen and (max-width:900px){}
+@media screen and (max-width:840px){}
+@media screen and (max-width:800px){}
+@media screen and (max-width:767px){
+	.header_section.stick .nav_wrap{
+		display: none;
+	}
+	.header_section.stick .nav_icon{display: block;}
+	.header_section.stick .nav_icon span{background-color: #f0116a !important;}
+	.form_wrp{padding: 15px;}
+	.career_left h4{font-size: 22px;}
+	.career_left p{font-size: 15px;}
+	.career_left h5{font-size: 16px;}
+	.career_left h3{font-size: 32px;}
+	.detailed_section{padding: 0 30px;}
+	.careet_work_at p{font-size: 16px;}
+	.careet_work_at h3{font-size: 32px;padding-bottom: 10px;}
+	.careet_work_at a{font-size: 18px;}
+	.vacancy_wrp a{padding: 15px;}
+	.vacancy_wrp a p{font-size: 22px;}
+	.vacancy_wrp h3{padding: 0;font-size: 32px;}
+	.vacancy_wrp{padding: 30px 0;}
+	.careet_work_at{padding: 30px 0;}
+	.career_section{padding: 0 30px;}
+.adrs_wrp {
+    text-align: center;
+    padding-bottom: 20px;
+}
+.nav_wrap.open ul li a{font-size:28px;}
+.nav_wrap p a{font-size:24px;}
+.banner_content h1{font-size:66px;}
+.work_content_right{padding:0 20px;padding-bottom:50px;}
+.work_content_left h2 a{font-size:32px;}
+.shadow_div:before,
+.shadow_div:after{top:20px;left:20px;}
+.work_section{padding-bottom:50px;}
+.partners_section{padding:50px 0;}
+.partners_content h3{font-size:22px;padding-top:40px;}
+.partners_content{padding-bottom:50px;}
+.footer_section label{display:block;float:none;padding-bottom:20px;text-align: center;padding-top: 0;}
+.footer_section p{display:block;padding:0;}
+.footer_section span a{display:block;float:none;margin:0 auto;max-width:200px;margin-top:20px;}
+.about_top_banner h4{font-size:28px;padding-top:20px;}
+.about_top_banner p{padding:30px 0;}
+.about_us_section{padding-bottom:50px;}
+.each_wrk_wrp h3{font-size:26px;}
+.each_wrk_wrp:hover:after{top:15px;left:15px;}
+.detl_content h2{font-size:32px;}
+.detl_content p{font-size:20px;}
+.vdo_wrp_outer{max-height:400px;}
+.brie_content h4{padding-bottom:15px;}
+.brie_content{padding-bottom:30px;}
+.about_banner_section{padding:0 00px;}
+.strategy h4{font-size:24px;padding-bottom:30px;font-family:'SourceSans SemiBold';}
+.strategy{padding:0;}
+.contact_section{padding:0;}
+.contact_top h3{padding-bottom:20px;font-size:28px;}
+.contact_top p{font-size:28px;}
+.contact_form_outer{padding-top:50px;}
+.contact_form_outer h3{font-size:24px;}
+.contact_form_outer .form-control{margin-bottom:30px;}
+.project_form_wrap{padding:50px 0;}
+}
+@media screen and (max-width:640px){
+	.form_parent{padding: 50px 30px;}
+	.milestone_content h4{font-size:20px;}
+.milestone_content p{font-size:12px;}
+.milestone_content:after{width:28px;height:28px;left:-45px;top:13px;}
+.milestone_content:before{width:14px;height:14px;left:-38px;}
+.milestone_content:hover:before{width:28px;height:28px;left:-45px;top:13px;}
+.milestone_content:hover:after{width:14px;height:14px;left:-38px;}
+.milestone_content{padding-bottom:0;}
+.vdo_wrp_outer{max-height:350px;}
+#example_video_1 .vjs-big-play-button{height:60px;width:60px;}
+.partners_left ul li{width:100% !important;float:none;text-align:center;padding:0 !important;padding-bottom:20px !important;}
+.banner_section,.banner_wrp_outer,.banner_content_outer{height:88vh;}
+.go_next{bottom:75px;}
+.contact_wrp{padding:30px;}
+.contact_top h3{font-size:24px;}
+.contact_top p{font-size:20px;}
+.contact_form_outer{padding-top:30px;}
+.contact_form_outer h3{font-size:20px;}
+.contact_form_outer .form-control{margin-bottom:30px;padding:7px 10px;}
+.project_form h2{font-size:28px;}
+.project_form p{font-size:16px;}
+.project_nav_wrp h3{font-size:20px;}
+.project_nav_wrp h3 span{font-size:22px;}
+.project_nav_wrp{padding:30px 15px;}
+}
+@media screen and (max-width:550px){.works_listing_section li.each_wrok{width:100%;float:none;margin-bottom:70px;}
+.vdo_wrp_outer{max-height:300px;}
+}
+@media screen and (max-width:480px){
+	.form_parent{padding: 50px 15px;}
+	.about_us_section{
+		padding: 0 15px;
+	}
+	.career_left h3{font-size: 26px;}
+	.banner_content h1{font-size:44px;line-height:1.2;}
+.partners_content p{font-size:24px;}
+.testimonial_slider .owl-prev, .testimonial_slider .owl-next{display:none !important;}
+.col-xs-*{width:100%;}
+.about_bottom_banner{display:none;}
+.about_bottom_banner .row [class*='col-xs']{width:100%;max-width:200px;margin:0 auto;display:block;float:none;}
+.about_top_banner h4{font-size:22px;}
+.about_top_banner p span{font-size:28px;font-family:'SourceSans SemiBold';padding-bottom:15px;}
+.logo_wrp{width:100px;}
+#nav_icon{right:30px;}
+#nav_icon.active{top:32px;}
+.detl_content h2{font-size:28px;}
+.detl_content p{font-size:18px;}
+.vdo_wrp_outer{max-height:250px;}
+.about_bottom_banner.mobile_device{display:block;}
+.mail_us_inner h4{padding:20px;}
+.mail_us{margin-bottom:50px;margin-top:10px;}
+.contact_top h3{font-size:22px;}
+.contact_top p{font-size:18px;}
+.contact_form_outer{padding-top:30px;}
+.contact_form_outer h3{font-size:18px;}
+}
+@media screen and (max-width:360px){.each_wrk_wrp h3{font-size:22px;}
+.banner_content h1{font-size:36px;}
+}
