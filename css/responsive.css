@@ -186,6 +186,12 @@
 .project_nav_wrp h3{font-size:20px;}
 .project_nav_wrp h3 span{font-size:22px;}
 .project_nav_wrp{padding:30px 15px;}
+
+
+body:after{
+    bottom: 65px;
+}
+
 }
 @media screen and (max-width:550px){.works_listing_section li.each_wrok{width:100%;float:none;margin-bottom:70px;}
 .vdo_wrp_outer{max-height:300px;}
