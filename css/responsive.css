@@ -1,3 +1,19 @@
+body:after{
+	position: fixed;
+    content: "Powered by Soance";
+    bottom: 41px;
+    right: 125px;
+    width: 136px;
+    height: 25px;
+    background: #ffffff;
+    z-index: 999999999999999;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
 @media screen and (min-width:1440px){.about_top_banner{//min-height:50vh;}
 .about_bottom_banner{background-size:100% 100%!important;}
 }
