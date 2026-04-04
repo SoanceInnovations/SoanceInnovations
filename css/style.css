@@ -171,7 +171,7 @@ div#preloader {
         display: block;
         position: absolute;
         height: 5px;
-        width: 100%; //background:#ff2989;opacity:1;right:0;//-webkit-transform:rotate(0deg);//-moz-transform:rotate(0deg);//-o-transform:rotate(0deg);//transform:rotate(0deg);-webkit-transform-origin:right center;-moz-transform-origin:right center;-o-transform-origin:right center;transform-origin:right center;-webkit-transition:.2s ease-in-out;-moz-transition:.2s ease-in-out;-o-transition:.2s ease-in-out;transition:.2s ease-in-out;}
+        width: 100%; //background:#2563EB;opacity:1;right:0;//-webkit-transform:rotate(0deg);//-moz-transform:rotate(0deg);//-o-transform:rotate(0deg);//transform:rotate(0deg);-webkit-transform-origin:right center;-moz-transform-origin:right center;-o-transform-origin:right center;transform-origin:right center;-webkit-transition:.2s ease-in-out;-moz-transition:.2s ease-in-out;-o-transition:.2s ease-in-out;transition:.2s ease-in-out;}
         .nav_icon span:nth-child(1) {
   top: 0px;
   right: 0;
@@ -1219,7 +1219,7 @@ div#example_video_1:after {
     text-align: center;
     left: 0;
     padding: 0 15px;
-    color: #f0116a;
+    color: #2563EB;
     width: 100%;
 }
  :placeholder-shown+label {
@@ -1520,7 +1520,7 @@ div#example_video_1:after {
     display: block !important;
 }
 .contact_form_outer .form-group.error_wrp label {
-    color: #f0116a;
+    color: #2563EB;
 }
 .form_parent {
     height: 606px;
@@ -1619,7 +1619,7 @@ section.header_section.stick.fixed_out {
 }
 .header_section .nav_wrap ul li.active a,
 .header_section .nav_wrap ul li:hover a {
-    color: #f0116a !important;
+    color: #2563EB !important;
 }
 .header_section .nav_wrap ul li.active a {
     font-weight: 800;
@@ -2151,7 +2151,7 @@ section.creative_text {
 }
 section.creative_text h2 {
     font-family: 'Poppins-Bold';
-    color: #f00855;
+    color: #2563EB;
     margin-bottom: 25px;
     font-size: 34px;
     letter-spacing: -1px;
@@ -2163,12 +2163,35 @@ section.creative_text p {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 400;
 }
+a.say_hello {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-family: 'SourceSans SemiBold';
+    border-radius: 6px;
+    border: 2px solid #2563EB;
+    background: #2563EB;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+a.say_hello:hover {
+    background: #1D4ED8;
+    border-color: #1D4ED8;
+    color: #fff;
+}
 section.creative_text a.say_hello {
     color: #1b0851;
     font-family: 'Poppins-Bold';
     margin-top: 25px;
     display: inline-block;
     font-size: 14px;
+    border-bottom: 1px solid #95e7d6;
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    border: none;
     border-bottom: 1px solid #95e7d6;
 }
 section.testimonials_section {
@@ -2208,7 +2231,7 @@ section.testimonials_section .carousel .carousel-indicators .active {
     width: 10px;
     height: 10px;
     margin: 0;
-    background-color: #f00855;
+    background-color: #2563EB;
 }
 section.testimonials_section .carousel .carousel-indicators li {
     display: inline-block;
@@ -2294,7 +2317,7 @@ div#home-center a.scroll-up {
     letter-spacing: 3px;
 }
 div#home-center a.scroll-up:hover {
-    color: #f0116a !important;
+    color: #2563EB !important;
 }
 section.our_services_section {
     background-color: #0d192b;
@@ -2807,12 +2830,32 @@ iframe#chk_frame {
     .banner_text {
         left: 0 !important;
         right: 0;
-        bottom: 30% !important;
+        top: 15% !important;
+        transform: none !important;
         text-align: center !important;
+        padding: 0 15px;
     }
     .banner_text h1 {
-        font-size: 31px !important;
-        padding: 20px;
+        font-size: 28px !important;
+        padding: 10px 15px;
+        line-height: 1.3;
+    }
+    .banner_text p {
+        font-size: 16px !important;
+        padding: 0 10px;
+        margin-bottom: 20px !important;
+    }
+    .banner_text a.say_hello {
+        padding: 12px 24px;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+    #contact-cta a.say_hello {
+        padding: 12px 24px;
+        font-size: 14px;
+        display: inline-block !important;
+        width: auto;
+        margin-bottom: 0;
     }
     .banner_section,
     .banner_wrp_outer,
@@ -2867,7 +2910,7 @@ iframe#chk_frame {
         margin-top: 12px !important;
     }
     section.header_section.header_home.stick.fixed_out.header_home .nav_icon.active span {
-        background-color: #f0116a !important;
+        background-color: #2563EB !important;
     }
     .contact_wrp {
         padding: 0px !important;

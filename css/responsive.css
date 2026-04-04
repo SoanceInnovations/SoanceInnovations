@@ -106,7 +106,7 @@
 		display: none;
 	}
 	.header_section.stick .nav_icon{display: block;}
-	.header_section.stick .nav_icon span{background-color: #f0116a !important;}
+	.header_section.stick .nav_icon span{background-color: #2563EB !important;}
 	.form_wrp{padding: 15px;}
 	.career_left h4{font-size: 22px;}
 	.career_left p{font-size: 15px;}

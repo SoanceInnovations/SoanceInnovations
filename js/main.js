@@ -126,7 +126,7 @@
 
 
           if (name == '') {
-              $("#name").css("border-color", "#f0116a");
+              $("#name").css("border-color", "#2563EB");
               $("#name").parent().addClass("error_wrp");
               $(".error_name").text("Name is required").addClass('show');
               flag = false;
@@ -135,7 +135,7 @@
           }
 
           if (email == '') {
-              $("#email").css("border-color", "#f0116a");
+              $("#email").css("border-color", "#2563EB");
               $(".error_email").text("Email is required").addClass('show');
               $("#email").parent().addClass("error_wrp");
               flag = false;
@@ -143,14 +143,14 @@
               $(".error_email").hide();
           }
           if (purpose == '') {
-              $("#purpose").css("border-color", "#f0116a");
+              $("#purpose").css("border-color", "#2563EB");
               $(".error_purpose").text("Add your purpose").addClass('show');
               $("#purpose").parent().addClass("error_wrp");
               flag = false;
           }
 
           if (!validateEmail(email)) {
-              $("#email").css("border-color", "#f0116a");
+              $("#email").css("border-color", "#2563EB");
               $(".error_email").text("Email is required").addClass('show');
               $("#email").parent().addClass("error_wrp");
               flag = false;
@@ -163,7 +163,7 @@
           // }
 
           if (message == '') {
-              $("#message").css("border-color", "#f0116a");
+              $("#message").css("border-color", "#2563EB");
               $(".error_message").text("Message is required").addClass('show');
               $("#message").parent().addClass("error_wrp");
               flag = false;
@@ -213,7 +213,7 @@
           }
           if (!validate(cv)) {
               $('.progress').hide();
-              $(".cv").css("border-color", "#f0116a");
+              $(".cv").css("border-color", "#2563EB");
               //alert(1);
               $(".error_cv").text("Please upload a valid format");
               $('.error_cv').delay(1000).fadeOut();
@@ -266,32 +266,32 @@
               var formData = new FormData();
 
               if (name == '') {
-                  $("#name").css("border-color", "#f0116a");
+                  $("#name").css("border-color", "#2563EB");
                   $(".error_name").text("Name is required");
                   flag = false;
               } else {
                   $(".error_name").hide();
               }
               if (email == '') {
-                  $("#email").css("border-color", "#f0116a");
+                  $("#email").css("border-color", "#2563EB");
                   $(".error_email").text("Email is required");
                   flag = false;
               } else {
                   $(".error_email").hide();
               }
               if (phone == '') {
-                  $("#phone").css("border-color", "#f0116a");
+                  $("#phone").css("border-color", "#2563EB");
                   $(".error_phone").text("Add your phone");
                   flag = false;
               }
 
               if (!validateEmail(email)) {
-                  $("#email").css("border-color", "#f0116a");
+                  $("#email").css("border-color", "#2563EB");
 
                   flag = false;
               }
               if (cv == '') {
-                  $(".cv").css("border-color", "#f0116a");
+                  $(".cv").css("border-color", "#2563EB");
                   $(".error_cv").text("CV is required");
                   $('.error_cv').delay(1000).fadeOut();
                   flag = false;
@@ -344,7 +344,7 @@
               $(this).css("border-color", "#ddd");
               $(this).parent().find('span').hide();
           } else {
-              $(this).css("border-color", "#f0116a");
+              $(this).css("border-color", "#2563EB");
               $(this).parent().find('span').show();
           }
       })
@@ -381,7 +381,7 @@
       function validateFieldcheck(id, val) {
           if (val == "") {
 
-              $("#" + id).css("border-color", "#f0116a");
+              $("#" + id).css("border-color", "#2563EB");
           } else {
 
               $("#" + id).css("border-color", "#fff");
@@ -417,14 +417,14 @@
 
 
           if (name == '') {
-              $("#name").css("border-color", "#f0116a");
+              $("#name").css("border-color", "#2563EB");
               $(".error_name").text("Name is required");
               flag = false;
           } else {
               $(".error_name").hide();
           }
           if (email == '') {
-              $("#email").css("border-color", "#f0116a");
+              $("#email").css("border-color", "#2563EB");
               $(".error_email").text("Email is required");
               flag = false;
           } else {
@@ -432,13 +432,13 @@
           }
 
           if (!validateEmail(email)) {
-              $("#email").css("border-color", "#f0116a");
+              $("#email").css("border-color", "#2563EB");
 
               flag = false;
           }
 
           if (message == '') {
-              $("#message").css("border-color", "#f0116a");
+              $("#message").css("border-color", "#2563EB");
               $(".error_message").text("Message is required");
               flag = false;
           } else {
