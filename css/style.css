@@ -315,6 +315,9 @@ line-height: 1; //-webkit-transform:translateY(0px);//-moz-transform:translateY(
 .work_content_right {
     padding-bottom: 50px;
 }
+#areas-served .col-md-4.col-sm-6 {
+    width: 33%;
+}
 .shadow_div {
     display: block;
     position: relative;
