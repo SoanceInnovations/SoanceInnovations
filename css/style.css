@@ -286,6 +286,9 @@ line-height: 1; //-webkit-transform:translateY(0px);//-moz-transform:translateY(
 .banner_content h1 span {
     display: block;
 }
+div#preloader {
+    background: #222d47;
+}
 #faq {
     display: none;
 }
