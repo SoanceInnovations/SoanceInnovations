@@ -318,8 +318,10 @@ div#preloader {
 .work_content_right {
     padding-bottom: 50px;
 }
-#areas-served .col-md-4.col-sm-6 {
-    width: 33%;
+@media (min-width: 992px){
+	#areas-served .col-md-4.col-sm-6 {
+	    width: 33%;
+	}
 }
 .shadow_div {
     display: block;
