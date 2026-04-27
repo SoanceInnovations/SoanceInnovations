@@ -54,7 +54,7 @@
 	f
 }
 }
-@media screen and (max-width:1080px){.partners_wrp .col-md-6{width:100%;float:none;}
+@media screen and (max-width:1080px){.partners_wrp .md\:w-1\/2{width:100%;float:none;}
 .partners_item h4{padding-bottom:20px;}
 .about_content_wrap{background-size:cover !important;}
 .wrok_brief_section{padding:80px 30px;}
@@ -79,7 +79,7 @@
 .about_us_section h3{font-size:26px;text-align:center;}
 .about_content h4{font-size:26px;}
 .about_content{padding-bottom:30px;}
-.about_us_section .row{padding:0;text-align:center;}
+.about_us_section .flex.flex-wrap{padding:0;text-align:center;}
 .about_us_section{padding-bottom:100px;}
 .about_top_banner{padding:0 30px;}
 .about_content_wrap{padding-top:30px;}
@@ -205,9 +205,9 @@ body:after{
 	.banner_content h1{font-size:44px;line-height:1.2;}
 .partners_content p{font-size:24px;}
 .testimonial_slider .owl-prev, .testimonial_slider .owl-next{display:none !important;}
-.col-xs-*{width:100%;}
+/* col-xs-* universal small-screen override removed — handled by Tailwind responsive classes */
 .about_bottom_banner{display:none;}
-.about_bottom_banner .row [class*='col-xs']{width:100%;max-width:200px;margin:0 auto;display:block;float:none;}
+.about_bottom_banner .flex.flex-wrap [class*='w-1/']{width:100%;max-width:200px;margin:0 auto;display:block;float:none;}
 .about_top_banner h4{font-size:22px;}
 .about_top_banner p span{font-size:28px;font-family:'SourceSans SemiBold';padding-bottom:15px;}
 .logo_wrp{width:100px;}
