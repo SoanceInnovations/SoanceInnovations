@@ -74,12 +74,30 @@
 
 /* Row uses flexbox */
 .flex.flex-wrap {
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: -12px;
+    margin-left: -12px;
 }
-/* Tailwind column widths need box-sizing */
-[class*="w-1/"], [class*="w-2/"], [class*="w-full"] {
+/* Tailwind column widths need box-sizing and horizontal gutter padding */
+[class*="w-1/"], [class*="w-2/"] {
     box-sizing: border-box;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+[class*="w-full"] {
+    box-sizing: border-box;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+/* Reduce column gutter on small screens */
+@media (max-width: 640px) {
+    .flex.flex-wrap {
+        margin-right: -8px;
+        margin-left: -8px;
+    }
+    [class*="w-1/"], [class*="w-2/"], [class*="w-full"] {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
 }
 
 /* Base form control styles (was provided by Bootstrap) */
