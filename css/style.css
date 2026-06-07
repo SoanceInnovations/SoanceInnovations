@@ -3100,3 +3100,26 @@ body:after{
     border-radius: 20px;
     pointer-events:none;
 }
+
+
+.contact_section_form{
+    display:flex;
+        width: 100%;
+    justify-content:space-between;
+}
+.contact_section_form .hs-form-frame{
+
+    width: 500px;
+    max-width:100%;
+}
+#hs-form-virality-container{
+    display:none;
+}
+@media all and (max-width:700px) {
+    .contact_section_form{
+            flex-direction: column;
+    }
+    .contact_section_form .abt_img{
+        display:none;
+    }
+}
