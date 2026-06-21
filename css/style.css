@@ -3624,3 +3624,8 @@ body.modal-open {
     max-width: 100%;
     max-height: 927px;
 }
+
+.nav_wrap {
+    background: #ff6600;
+    background: -webkit-linear-gradient(bottom left, #fce4fa, #dadada, #0b6519);
+}
