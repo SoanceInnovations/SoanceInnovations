@@ -59,6 +59,60 @@
 .about_content_wrap{background-size:cover !important;}
 .wrok_brief_section{padding:80px 30px;}
 }
+@media screen and (max-width:767px){
+	.reach-section__header h2{
+		font-size:24px;
+		letter-spacing:1px;
+	}
+	.reach-section__header p,
+	.reach-block__subtitle{
+		font-size:15px;
+	}
+	.reach-block__title{
+		font-size:18px;
+	}
+	.reach-card h4{
+		font-size:18px;
+	}
+	.reach-locations__grid a{
+		font-size:13px;
+		padding:8px 12px;
+	}
+	.header_section.stick .header_cta_wrap:not(.header_cta_wrap--mobile){
+		display:none;
+	}
+	.header_cta_wrap--mobile{
+		display:flex !important;
+	}
+	.header_cta_wrap--mobile .header_cta{
+		width:100%;
+		justify-content:center;
+	}
+	.banner_text--modern{
+		padding:0 20px;
+		top:18% !important;
+		transform:none !important;
+		text-align:center !important;
+	}
+	.banner_text--modern .container{
+		max-width:100%;
+	}
+	.banner_text--modern h1{
+		max-width:100%;
+	}
+	.banner_desc{
+		max-width:100%;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.banner_cta_group{
+		justify-content:center;
+	}
+	.banner_eyebrow{
+		font-size:11px;
+		letter-spacing:2.5px;
+	}
+}
 @media screen and (max-width:992px){
 	.stick.fixed{padding-right: 20px;}
 	.form_parent{height: auto;display: block; padding: 50px;}
