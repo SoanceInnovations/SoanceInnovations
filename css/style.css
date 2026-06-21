@@ -1103,6 +1103,9 @@ div#example_video_1:after {
     display: block;
     position: relative;
 }
+.contact_inner_content{
+    padding-bottom:50px;
+}
 .contact_top h3 {
     color: #1b0851 !important;
     font-size: 40px;

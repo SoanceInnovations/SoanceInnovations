@@ -222,7 +222,7 @@
         </section>
         <!-- ./header -->
 
-        <content class="inner-content">
+        <content class="inner-content contact_inner_content">
             <!-- contact Section -->
             <section class="contact_section">
                 <div class="container">
@@ -399,6 +399,15 @@ s0.parentNode.insertBefore(s1,s0);
         element.style.maxHeight = `${height - 80}px`;
     }
 }, 1000); // wait 1 second
+
+ setTimeout(() => {
+    const element = document.querySelector('.hs-form-frame');
+
+    if (element) {
+        const height = element.offsetHeight;
+        element.style.maxHeight = `${height - 80}px`;
+    }
+}, 5000); // wait 1 second
 </script>
 </body>
 
