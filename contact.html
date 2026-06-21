@@ -388,14 +388,18 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 <script type="text/javascript">
-    setTimeout(() => {
+  function updateMaxHeight() {
     const element = document.querySelector('.hs-form-frame');
 
-    if (element) {
-        const height = element.offsetHeight;
-        element.style.maxHeight = `${height - 80}px`;
-    }
-}, 1000); // wait 1 second
+    if (!element) return;
+
+    element.style.removeProperty('max-height');
+    element.style.maxHeight = `${element.offsetHeight - 80}px`;
+}
+
+[1000, 3000, 5000].forEach(delay => {
+    setTimeout(updateMaxHeight, delay);
+});
 </script>
 </body>
 
