@@ -50,11 +50,41 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
     <!-- styles -->
+    <!-- Preconnect for fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Modern Inter font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+
+    <style>
+      /* Base modern font - early to beat other styles */
+      html, body, h1, h2, h3, h4, h5, h6, p, span, div {
+        font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+      }
+    </style>
+
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- fontawsome -->
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
+    <!-- Tailwind config for modern fonts -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'sans': ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif']
+            }
+          }
+        }
+      };
+    </script>
+
+    <!-- fontawsome (CDN for reliable loading of icon fonts) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Preload Inter for better font loading -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 
     <!-- OWL Carousel -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -324,7 +354,7 @@
     </div>
 
 
-    <main class="master_wrap animated fadeIn home_page">
+    <main class="master_wrap animated fadeIn home_page font-sans">
 
 
         <!-- header -->
@@ -414,534 +444,563 @@
         </section>
         <!-- ./banner -->
 
-        <section id="section_one" class="creative_text">
-            <div class="container">
-                <h2>WE BUILD FOR YOUR BUSINESS</h2>
-                <p>We build simple, professional WordPress websites and mobile apps for businesses in Kannur, Thalassery, Kadirur, Pulliode, KR Puram, Whitefield Bangalore, Kurudusonnenahalli and across Kerala & Karnataka. Need a new website, mobile app or redesign? We can help.</p>
-                <p>Fast, clean, mobile-friendly websites and apps tailored to your business — with WhatsApp integration, contact forms, and basic or advanced SEO included.</p>
+        <!-- Modern styles for redesigned content -->
+        <style>
+            .max-w-6xl, .max-w-4xl, .max-w-3xl, .max-w-2xl {
+                font-feature-settings: "tnum";
+            }
+            
+            h1, h2, h3, h4 {
+                font-feature-settings: "kern", "tnum";
+            }
+            
+            /* Improve old container conflicts */
+            main .max-w-6xl,
+            main .max-w-4xl,
+            main .max-w-3xl {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            /* Modern details/faq */
+            details summary::-webkit-details-marker { display: none; }
+            details[open] summary { color: #1e2937; }
+
+            /* Subtle professional buttons */
+            .btn-modern {
+                transition: all .15s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            /* Ensure modern Inter font on redesigned sections */
+            .py-16, .py-20, section[id], #services, #why-us, #packages, #process, #faq, #areas-served, #contact-cta {
+                font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+            }
+
+            /* Strong override for body to use modern font */
+            body {
+                font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+            }
+
+            /* Explicit for redesigned card content */
+            #services h2, #services h3, #services p, #services div,
+            #packages h2, #packages h3, #packages p,
+            #why-us h2, #why-us h3, #why-us p,
+            #faq h2, #faq h3, #faq p,
+            #section-1 h2, #section-1 p, #section-1 div,
+            #industries h2, #industries p, #industries div {
+                font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+            }
+
+            /* Additional broad support for any text in modern sections (exclude Font Awesome icons) */
+            #services *:not(.fa):not([class*="fa-"]),
+            #packages *:not(.fa):not([class*="fa-"]),
+            #why-us *:not(.fa):not([class*="fa-"]),
+            #faq *:not(.fa):not([class*="fa-"]),
+            #section-1 *:not(.fa):not([class*="fa-"]),
+            #industries *:not(.fa):not([class*="fa-"]) {
+                font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif !important;
+            }
+
+            /* Protect Font Awesome icons so ::before pseudo renders the icon glyphs */
+            i.fa, .fa, [class^="fa-"], [class*=" fa-"] {
+                font-family: FontAwesome !important;
+            }
+
+            /* Make sure icon wrappers don't inherit text font in a way that breaks children */
+            .inline-flex i.fa {
+                font-family: FontAwesome !important;
+            }
+        </style>
+
+        <!-- INTRO -->
+        <section id="section-1" class="py-16 bg-white border-b border-slate-100 font-sans">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-[42px] leading-tight font-semibold tracking-[-1.2px] text-slate-900">We build clean, effective websites and apps<br class="hidden md:block"> for growing businesses.</h2>
+                <p class="mt-5 text-lg text-slate-600 max-w-[620px] mx-auto">Modern, mobile-first WordPress sites and custom mobile apps. Fast delivery. Clear communication. Designed for local businesses in Kerala &amp; Karnataka, and clients worldwide.</p>
             </div>
         </section>
 
 
-        <!-- OUR SERVICES SECTION -->
-        <section class="our_services_section" id="services">
-            <div class="container">
-                <div class="flex flex-wrap">
-                    <div class="w-full">
-                        <h2>OUR SERVICES</h2>
+        <!-- SERVICES -->
+        <section id="services" class="py-20 bg-white font-sans">
+            <div class="max-w-6xl mx-auto px-6 font-sans">
+                <div class="flex flex-col items-center text-center mb-12">
+                    <span class="uppercase text-xs tracking-[3px] font-semibold text-indigo-600">Capabilities</span>
+                    <h2 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">What we build</h2>
+                    <p class="mt-3 max-w-md text-slate-600">Professional digital products that help your business look credible and convert visitors.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="group rounded-2xl border border-slate-200 bg-white p-7 hover:border-indigo-200 hover:shadow-sm transition-all">
+                        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                            <i class="fa fa-globe fa-lg"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl tracking-tight text-slate-900">Business Websites</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Clean, professional WordPress websites that represent your brand well and work beautifully on every device.</p>
                     </div>
-                    <div class="w-1/2 sm:w-1/4">
-                        <ul>
-                            <li>
-                                <a href="#">BUSINESS WEBSITES</a>
-                            </li>
-                            <li>
-                                <a href="#">WEBSITE REDESIGN</a>
-                            </li>
+
+                    <div class="group rounded-2xl border border-slate-200 bg-white p-7 hover:border-indigo-200 hover:shadow-sm transition-all">
+                        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                            <i class="fa fa-refresh fa-lg"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl tracking-tight text-slate-900">Website Redesign</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Modernize your existing website with better design, performance, and user experience.</p>
+                    </div>
+
+                    <div class="group rounded-2xl border border-slate-200 bg-white p-7 hover:border-indigo-200 hover:shadow-sm transition-all">
+                        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                            <i class="fa fa-file-text-o fa-lg"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl tracking-tight text-slate-900">Landing Pages</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">High-converting single pages for campaigns, lead generation, or product launches.</p>
+                    </div>
+
+                    <div class="group rounded-2xl border border-slate-200 bg-white p-7 hover:border-indigo-200 hover:shadow-sm transition-all">
+                        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                            <i class="fa fa-mobile fa-lg"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl tracking-tight text-slate-900">Mobile App Development</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Custom Android &amp; iOS apps for businesses — booking, catalog, or service apps.</p>
+                    </div>
+
+                    <div class="group rounded-2xl border border-slate-200 bg-white p-7 hover:border-indigo-200 hover:shadow-sm transition-all">
+                        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                            <i class="fa fa-shopping-cart fa-lg"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl tracking-tight text-slate-900">E-commerce Websites</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Simple online stores with product listings, cart, and WhatsApp ordering.</p>
+                    </div>
+
+                    <div class="group rounded-2xl border border-slate-200 bg-white p-7 hover:border-indigo-200 hover:shadow-sm transition-all">
+                        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                            <i class="fa fa-wrench fa-lg"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl tracking-tight text-slate-900">WordPress Maintenance</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Ongoing updates, security, backups, and performance care for your site.</p>
+                    </div>
+
+                    <div class="group rounded-2xl border border-slate-200 bg-white p-7 hover:border-indigo-200 hover:shadow-sm transition-all">
+                        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                            <i class="fa fa-whatsapp fa-lg"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl tracking-tight text-slate-900">WhatsApp Integration</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Direct chat buttons, contact forms, and lead capture built into your website.</p>
+                    </div>
+
+                    <div class="group rounded-2xl border border-slate-200 bg-white p-7 hover:border-indigo-200 hover:shadow-sm transition-all">
+                        <div class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600">
+                            <i class="fa fa-server fa-lg"></i>
+                        </div>
+                        <h3 class="font-semibold text-xl tracking-tight text-slate-900">Hosting &amp; SEO Setup</h3>
+                        <p class="mt-2 text-sm leading-relaxed text-slate-600">Reliable hosting configuration and foundational SEO so your site gets found.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHO WE HELP -->
+        <section id="industries" class="py-16 bg-slate-50 font-sans">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-10">
+                    <span class="text-xs font-semibold tracking-[3px] uppercase text-indigo-600">Clients</span>
+                    <h2 class="mt-3 text-4xl font-semibold tracking-tight text-slate-900">Businesses we serve</h2>
+                    <p class="mt-3 text-slate-600 max-w-lg mx-auto">We partner with local and growing businesses across Kerala, Karnataka, and beyond.</p>
+                </div>
+
+                <div class="flex flex-wrap justify-center gap-3">
+                    <div class="inline-flex items-center gap-x-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-slate-700 hover:border-indigo-200 transition">Clinics &amp; Healthcare</div>
+                    <div class="inline-flex items-center gap-x-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-slate-700 hover:border-indigo-200 transition">Restaurants &amp; Cafes</div>
+                    <div class="inline-flex items-center gap-x-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-slate-700 hover:border-indigo-200 transition">Retail &amp; Local Shops</div>
+                    <div class="inline-flex items-center gap-x-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-slate-700 hover:border-indigo-200 transition">Education &amp; Tuition</div>
+                    <div class="inline-flex items-center gap-x-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-slate-700 hover:border-indigo-200 transition">Builders &amp; Interiors</div>
+                    <div class="inline-flex items-center gap-x-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-slate-700 hover:border-indigo-200 transition">Service Professionals</div>
+                    <div class="inline-flex items-center gap-x-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-slate-700 hover:border-indigo-200 transition">Consultants &amp; Coaches</div>
+                    <div class="inline-flex items-center gap-x-2 rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-slate-700 hover:border-indigo-200 transition">Real Estate</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHY CHOOSE US -->
+        <section id="why-us" class="py-20 bg-indigo-50 font-sans">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="max-w-2xl mx-auto text-center mb-12">
+                    <span class="text-xs uppercase tracking-[3px] font-semibold text-indigo-600">The Soance difference</span>
+                    <h2 class="mt-3 text-4xl font-semibold tracking-tight text-slate-900">Why businesses choose us</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <div class="rounded-2xl border border-slate-200 bg-white p-8">
+                        <div class="text-indigo-600 mb-4"><i class="fa fa-paint-brush fa-lg"></i></div>
+                        <h3 class="font-semibold text-xl tracking-tight mb-2 text-slate-900">Clean &amp; Professional Design</h3>
+                        <p class="text-slate-600 text-[15px] leading-relaxed">Websites that look polished, feel trustworthy, and represent your business with clarity.</p>
+                    </div>
+                    <div class="rounded-2xl border border-slate-200 bg-white p-8">
+                        <div class="text-indigo-600 mb-4"><i class="fa fa-mobile fa-lg"></i></div>
+                        <h3 class="font-semibold text-xl tracking-tight mb-2 text-slate-900">Truly Mobile-First</h3>
+                        <p class="text-slate-600 text-[15px] leading-relaxed">Every site is designed and tested to perform beautifully across phones, tablets and desktops.</p>
+                    </div>
+                    <div class="rounded-2xl border border-slate-200 bg-white p-8">
+                        <div class="text-indigo-600 mb-4"><i class="fa fa-clock-o fa-lg"></i></div>
+                        <h3 class="font-semibold text-xl tracking-tight mb-2 text-slate-900">Fast, Predictable Delivery</h3>
+                        <p class="text-slate-600 text-[15px] leading-relaxed">We work efficiently with clear timelines so you can launch without unnecessary delays.</p>
+                    </div>
+                    <div class="rounded-2xl border border-slate-200 bg-white p-8">
+                        <div class="text-indigo-600 mb-4"><i class="fa fa-comments-o fa-lg"></i></div>
+                        <h3 class="font-semibold text-xl tracking-tight mb-2 text-slate-900">Clear, Human Communication</h3>
+                        <p class="text-slate-600 text-[15px] leading-relaxed">No confusing jargon. You’ll always know what’s happening and what comes next.</p>
+                    </div>
+                    <div class="rounded-2xl border border-slate-200 bg-white p-8">
+                        <div class="text-indigo-600 mb-4"><i class="fa fa-handshake-o fa-lg"></i></div>
+                        <h3 class="font-semibold text-xl tracking-tight mb-2 text-slate-900">Fair &amp; Transparent</h3>
+                        <p class="text-slate-600 text-[15px] leading-relaxed">Straightforward scope and pricing built for small businesses — no surprise fees.</p>
+                    </div>
+                    <div class="rounded-2xl border border-slate-200 bg-white p-8">
+                        <div class="text-indigo-600 mb-4"><i class="fa fa-life-ring fa-lg"></i></div>
+                        <h3 class="font-semibold text-xl tracking-tight mb-2 text-slate-900">Support After Launch</h3>
+                        <p class="text-slate-600 text-[15px] leading-relaxed">We stay available. Updates, questions, and help are just a message away.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PACKAGES -->
+        <section id="packages" class="py-20 bg-white font-sans">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-11">
+                    <span class="uppercase tracking-[3px] text-xs font-semibold text-indigo-600">Plans</span>
+                    <h2 class="mt-3 text-4xl md:text-5xl font-semibold tracking-tight text-slate-900">Simple packages</h2>
+                    <p class="mt-3 text-slate-600">Choose a starting point. We’ll tailor it to your business.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+                    <!-- Starter -->
+                    <div class="flex flex-col rounded-3xl border border-slate-200 bg-white p-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold tracking-tight">Starter</h3>
+                            <p class="mt-1 text-sm text-slate-500">Perfect for a simple online presence</p>
+                        </div>
+                        <ul class="mt-7 mb-auto space-y-3 text-sm text-slate-700">
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Single-page website</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Mobile-friendly design</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> WhatsApp button</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Contact form</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Basic SEO setup</li>
                         </ul>
+                        <a href="https://wa.me/918217445213?text=Hi%2C%20I'm%20interested%20in%20the%20Starter%20package" target="_blank" rel="noopener noreferrer"
+                           class="mt-8 block w-full rounded-xl border border-slate-900 bg-white py-3 text-center text-sm font-semibold text-slate-900 transition hover:bg-slate-900 hover:text-white">
+                            Get Started
+                        </a>
                     </div>
-                    <div class="w-1/2 sm:w-1/4">
-                        <ul>
-                            <li>
-                                <a href="#">LANDING PAGES</a>
-                            </li>
-                            <li>
-                                <a href="#">WORDPRESS MAINTENANCE</a>
-                            </li>
+
+                    <!-- Business (popular) -->
+                    <div class="flex flex-col rounded-3xl border-2 border-indigo-600 bg-white p-8 relative">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-indigo-600 px-4 py-px text-xs font-semibold tracking-wider text-white">MOST POPULAR</div>
+                        <div>
+                            <h3 class="text-2xl font-semibold tracking-tight">Business</h3>
+                            <p class="mt-1 text-sm text-slate-500">Ideal for most small businesses</p>
+                        </div>
+                        <ul class="mt-7 mb-auto space-y-3 text-sm text-slate-700">
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Up to 5 pages</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Mobile-friendly design</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> WhatsApp &amp; contact form</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> SEO setup</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Google Maps integration</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> 1 month post-launch support</li>
                         </ul>
+                        <a href="https://wa.me/918217445213?text=Hi%2C%20I'm%20interested%20in%20the%20Business%20package" target="_blank" rel="noopener noreferrer"
+                           class="mt-8 block w-full rounded-xl bg-indigo-600 py-3 text-center text-sm font-semibold text-white transition hover:bg-indigo-700">
+                            Get Started
+                        </a>
                     </div>
-                    <div class="w-1/2 sm:w-1/4">
-                        <ul>
-                            <li>
-                                <a href="#">HOSTING SETUP</a>
-                            </li>
-                            <li>
-                                <a href="#">WHATSAPP / CONTACT INTEGRATION</a>
-                            </li>
+
+                    <!-- Growth -->
+                    <div class="flex flex-col rounded-3xl border border-slate-200 bg-white p-8">
+                        <div>
+                            <h3 class="text-2xl font-semibold tracking-tight">Growth</h3>
+                            <p class="mt-1 text-sm text-slate-500">Custom solution for ambitious projects</p>
+                        </div>
+                        <ul class="mt-7 mb-auto space-y-3 text-sm text-slate-700">
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Custom multi-page website</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Blog or portfolio section</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> E-commerce ready</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Advanced SEO</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Priority support</li>
+                            <li class="flex items-start gap-2"><i class="fa fa-check text-emerald-500 mt-1"></i> Ongoing maintenance</li>
                         </ul>
-                    </div>
-                    <div class="w-1/2 sm:w-1/4">
-                        <ul>
-                            <li>
-                                <a href="#">MOBILE APP DEVELOPMENT</a>
-                            </li>
-                            <li>
-                                <a href="#">E-COMMERCE WEBSITES</a>
-                            </li>
-                        </ul>
+                        <a href="https://wa.me/918217445213?text=Hi%2C%20I'm%20interested%20in%20the%20Growth%20package" target="_blank" rel="noopener noreferrer"
+                           class="mt-8 block w-full rounded-xl border border-slate-900 bg-white py-3 text-center text-sm font-semibold text-slate-900 transition hover:bg-slate-900 hover:text-white">
+                            Talk to us
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-        <!--/OUR SERVICES SECTION -->
 
-        <!-- INDUSTRIES SECTION -->
-        <section style="padding: 80px 0; background: #f9f9f9;" id="industries">
-            <div class="container">
-                <div class="flex flex-wrap">
-                    <div class="w-full" style="text-align:center; margin-bottom:40px;">
-                        <h2 style="font-size:32px; letter-spacing:2px; font-family:'SourceSans SemiBold';">WHO WE WORK WITH</h2>
-                        <p style="font-size:18px; margin-top:15px; color:#555;">We build websites and mobile apps for all kinds of local and small businesses across Kannur, Thalassery, Kadirur, Pulliode, KR Puram, Whitefield Bangalore & Kurudusonnenahalli.</p>
+        <!-- /PORTFOLIO (hidden placeholder removed in redesign) -->
+
+        <!-- PROCESS -->
+        <section id="process" class="py-20 bg-slate-50 font-sans">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-12">
+                    <span class="uppercase tracking-[3px] text-xs font-semibold text-indigo-600">Process</span>
+                    <h2 class="mt-3 text-4xl font-semibold tracking-tight text-slate-900">How we work together</h2>
+                    <p class="mt-2 text-slate-600">A clear, collaborative process from first call to launch.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="rounded-2xl bg-white p-7 border border-slate-100">
+                        <div class="font-mono text-xs font-bold text-indigo-600 tracking-widest mb-3">01</div>
+                        <h4 class="font-semibold text-lg mb-2 tracking-tight">Discovery Call</h4>
+                        <p class="text-sm text-slate-600">We learn about your business, goals, audience, and what success looks like for your project.</p>
                     </div>
-                    <div class="w-1/2 sm:w-1/3 md:w-1/6" style="text-align:center; margin-bottom:30px;">
-                        <div style="padding:20px; border:1px solid #eee; border-radius:6px;">
-                            <p style="font-size:16px; font-family:'SourceSans SemiBold';">Clinics</p>
-                        </div>
+                    <div class="rounded-2xl bg-white p-7 border border-slate-100">
+                        <div class="font-mono text-xs font-bold text-indigo-600 tracking-widest mb-3">02</div>
+                        <h4 class="font-semibold text-lg mb-2 tracking-tight">Design &amp; Build</h4>
+                        <p class="text-sm text-slate-600">We create a clean, fast website (or app) tailored to your brand and content.</p>
                     </div>
-                    <div class="w-1/2 sm:w-1/3 md:w-1/6" style="text-align:center; margin-bottom:30px;">
-                        <div style="padding:20px; border:1px solid #eee; border-radius:6px;">
-                            <p style="font-size:16px; font-family:'SourceSans SemiBold';">Restaurants</p>
-                        </div>
+                    <div class="rounded-2xl bg-white p-7 border border-slate-100">
+                        <div class="font-mono text-xs font-bold text-indigo-600 tracking-widest mb-3">03</div>
+                        <h4 class="font-semibold text-lg mb-2 tracking-tight">Review &amp; Refine</h4>
+                        <p class="text-sm text-slate-600">You review the work, give feedback, and we iterate until everything feels right.</p>
                     </div>
-                    <div class="w-1/2 sm:w-1/3 md:w-1/6" style="text-align:center; margin-bottom:30px;">
-                        <div style="padding:20px; border:1px solid #eee; border-radius:6px;">
-                            <p style="font-size:16px; font-family:'SourceSans SemiBold';">Local Shops</p>
-                        </div>
-                    </div>
-                    <div class="w-1/2 sm:w-1/3 md:w-1/6" style="text-align:center; margin-bottom:30px;">
-                        <div style="padding:20px; border:1px solid #eee; border-radius:6px;">
-                            <p style="font-size:16px; font-family:'SourceSans SemiBold';">Tuition Centres</p>
-                        </div>
-                    </div>
-                    <div class="w-1/2 sm:w-1/3 md:w-1/6" style="text-align:center; margin-bottom:30px;">
-                        <div style="padding:20px; border:1px solid #eee; border-radius:6px;">
-                            <p style="font-size:16px; font-family:'SourceSans SemiBold';">Builders &amp; Interior</p>
-                        </div>
-                    </div>
-                    <div class="w-1/2 sm:w-1/3 md:w-1/6" style="text-align:center; margin-bottom:30px;">
-                        <div style="padding:20px; border:1px solid #eee; border-radius:6px;">
-                            <p style="font-size:16px; font-family:'SourceSans SemiBold';">Service Businesses</p>
-                        </div>
+                    <div class="rounded-2xl bg-white p-7 border border-slate-100">
+                        <div class="font-mono text-xs font-bold text-indigo-600 tracking-widest mb-3">04</div>
+                        <h4 class="font-semibold text-lg mb-2 tracking-tight">Launch &amp; Support</h4>
+                        <p class="text-sm text-slate-600">We go live together and remain available for questions and post-launch needs.</p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- /INDUSTRIES SECTION -->
 
-        <!-- WHY CHOOSE SOANCE -->
-        <section style="padding: 80px 0; background: #000; color:#fff;" id="why-us">
-            <div class="container">
-                <div class="flex flex-wrap">
-                    <div class="w-full" style="text-align:center; margin-bottom:40px;">
-                        <h2 style="font-size:32px; letter-spacing:2px; font-family:'SourceSans SemiBold'; color:#fff;">WHY CHOOSE SOANCE</h2>
-                    </div>
-                    <div class="w-full sm:w-1/2 md:w-1/3" style="margin-bottom:30px;">
-                        <div style="padding:30px; border:1px solid #333; border-radius:6px; height:100%;">
-                            <h4 style="color:#fff; font-size:18px; margin-bottom:10px; font-family:'SourceSans SemiBold';">Clean &amp; Professional Design</h4>
-                            <p style="color:#aaa; font-size:15px;">Every website we build looks polished and builds trust with your visitors.</p>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-1/2 md:w-1/3" style="margin-bottom:30px;">
-                        <div style="padding:30px; border:1px solid #333; border-radius:6px; height:100%;">
-                            <h4 style="color:#fff; font-size:18px; margin-bottom:10px; font-family:'SourceSans SemiBold';">Mobile-Friendly</h4>
-                            <p style="color:#aaa; font-size:15px;">All our websites work perfectly on phones, tablets, and desktops.</p>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-1/2 md:w-1/3" style="margin-bottom:30px;">
-                        <div style="padding:30px; border:1px solid #333; border-radius:6px; height:100%;">
-                            <h4 style="color:#fff; font-size:18px; margin-bottom:10px; font-family:'SourceSans SemiBold';">Fast Setup</h4>
-                            <p style="color:#aaa; font-size:15px;">We move quickly so your business gets online without long delays.</p>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-1/2 md:w-1/3" style="margin-bottom:30px;">
-                        <div style="padding:30px; border:1px solid #333; border-radius:6px; height:100%;">
-                            <h4 style="color:#fff; font-size:18px; margin-bottom:10px; font-family:'SourceSans SemiBold';">Clear Communication</h4>
-                            <p style="color:#aaa; font-size:15px;">No jargon. We keep you informed at every step of the project.</p>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-1/2 md:w-1/3" style="margin-bottom:30px;">
-                        <div style="padding:30px; border:1px solid #333; border-radius:6px; height:100%;">
-                            <h4 style="color:#fff; font-size:18px; margin-bottom:10px; font-family:'SourceSans SemiBold';">Affordable Pricing</h4>
-                            <p style="color:#aaa; font-size:15px;">Transparent pricing designed for small businesses, not large agencies.</p>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-1/2 md:w-1/3" style="margin-bottom:30px;">
-                        <div style="padding:30px; border:1px solid #333; border-radius:6px; height:100%;">
-                            <h4 style="color:#fff; font-size:18px; margin-bottom:10px; font-family:'SourceSans SemiBold';">Support After Launch</h4>
-                            <p style="color:#aaa; font-size:15px;">We don't disappear after delivery. We're here when you need us.</p>
-                        </div>
-                    </div>
+        <!-- FINAL CTA -->
+        <section class="py-20 bg-indigo-50 font-sans" id="contact-cta">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-semibold tracking-tighter text-slate-900">Ready to get your business online?</h2>
+                <p class="mt-3 text-lg text-slate-600">Let’s talk about your project. Quick responses, honest advice.</p>
+                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <button type="button" class="open-contact-popup rounded-2xl bg-indigo-600 px-7 py-[13px] text-sm font-semibold text-white transition hover:bg-indigo-700">
+                        Get a Quote
+                    </button>
+                    <a href="https://wa.me/918217445213" target="_blank" rel="noopener noreferrer"
+                       class="rounded-2xl border border-slate-900 bg-white px-7 py-[13px] text-sm font-semibold text-slate-900 transition hover:bg-slate-900 hover:text-white">
+                        <i class="fa fa-whatsapp mr-1.5"></i> Chat on WhatsApp
+                    </a>
                 </div>
             </div>
         </section>
-        <!-- /WHY CHOOSE SOANCE -->
 
-        <!-- PACKAGES SECTION -->
-        <section style="padding: 80px 0; background: #fff;" id="packages">
-            <div class="container">
-                <div class="flex flex-wrap">
-                    <div class="w-full" style="text-align:center; margin-bottom:40px;">
-                        <h2 style="font-size:32px; letter-spacing:2px; font-family:'SourceSans SemiBold';">PACKAGES</h2>
-                        <p style="font-size:18px; margin-top:15px; color:#555;">Simple packages to get your business online.</p>
-                    </div>
-                    <div class="w-full md:w-1/3" style="margin-bottom:30px;">
-                        <div style="padding:40px 30px; border:2px solid #eee; border-radius:8px; text-align:center; height:100%;">
-                            <h3 style="font-size:24px; font-family:'SourceSans SemiBold'; margin-bottom:10px;">Starter</h3>
-                            <ul style="text-align:left; margin-bottom:30px;">
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">Single-page website</li>
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">Mobile-friendly design</li>
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">WhatsApp button</li>
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">Contact form</li>
-                                <li style="padding:8px 0;">Basic SEO setup</li>
-                            </ul>
-                            <a href="https://wa.me/918217445213?text=Hi%2C%20I'm%20interested%20in%20the%20Starter%20package" target="_blank" rel="noopener noreferrer" class="say_hello" style="display:inline-block;">Get Started</a>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/3" style="margin-bottom:30px;">
-                        <div style="padding:40px 30px; border:2px solid #2563EB; border-radius:8px; text-align:center; height:100%;">
-                            <p style="background:#2563EB; color:#fff; font-size:13px; padding:4px 12px; border-radius:20px; display:inline-block; margin-bottom:10px;">MOST POPULAR</p>
-                            <h3 style="font-size:24px; font-family:'SourceSans SemiBold'; margin-bottom:10px;">Business</h3>
-                            <ul style="text-align:left; margin-bottom:30px;">
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">Up to 5 pages</li>
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">Mobile-friendly design</li>
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">WhatsApp &amp; contact form</li>
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">SEO setup</li>
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">Google Maps integration</li>
-                                <li style="padding:8px 0;">1 month post-launch support</li>
-                            </ul>
-                            <a href="https://wa.me/918217445213?text=Hi%2C%20I'm%20interested%20in%20the%20Business%20package" target="_blank" rel="noopener noreferrer" class="say_hello" style="display:inline-block;">Get Started</a>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/3" style="margin-bottom:30px;">
-                        <div style="padding:40px 30px; border:2px solid #eee; border-radius:8px; text-align:center; height:100%;">
-                            <h3 style="font-size:24px; font-family:'SourceSans SemiBold'; margin-bottom:10px;">Growth</h3>
-                            <ul style="text-align:left; margin-bottom:30px;">
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">Custom multi-page website</li>
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">Blog or portfolio section</li>
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">E-commerce ready</li>
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">Advanced SEO</li>
-                                <li style="padding:8px 0; border-bottom:1px solid #f0f0f0;">Priority support</li>
-                                <li style="padding:8px 0;">Ongoing maintenance</li>
-                            </ul>
-                            <a href="https://wa.me/918217445213?text=Hi%2C%20I'm%20interested%20in%20the%20Growth%20package" target="_blank" rel="noopener noreferrer" class="say_hello" style="display:inline-block;">Get Started</a>
-                        </div>
-                    </div>
+        <!-- FAQ -->
+        <section id="faq" class="py-20 bg-white font-sans">
+            <div class="max-w-3xl mx-auto px-6">
+                <div class="text-center mb-10">
+                    <span class="uppercase text-xs font-semibold tracking-[3px] text-indigo-600">FAQ</span>
+                    <h2 class="mt-3 text-4xl font-semibold tracking-tight">Frequently asked questions</h2>
+                </div>
+
+                <div class="space-y-3 text-[15px]">
+                    <details class="group rounded-2xl border border-slate-200 bg-white px-6 py-4 open:bg-slate-50">
+                        <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+                            Who is the best web developer in Kannur?
+                            <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+                        </summary>
+                        <p class="mt-3 text-slate-600">Soance Innovations LLP is a top-rated web development company based in Kadirur, Kannur. We specialize in WordPress website development, mobile app development, e-commerce solutions and SEO services for businesses across Kannur, Thalassery, and all of Kerala.</p>
+                    </details>
+
+                    <details class="group rounded-2xl border border-slate-200 bg-white px-6 py-4 open:bg-slate-50">
+                        <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+                            How much does a website cost in Kannur?
+                            <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+                        </summary>
+                        <p class="mt-3 text-slate-600">At Soance, we offer affordable, custom website packages tailored to your needs. We provide web development services in Kannur, Thalassery, Kadirur and Pulliode with no hidden charges.</p>
+                    </details>
+
+                    <details class="group rounded-2xl border border-slate-200 bg-white px-6 py-4 open:bg-slate-50">
+                        <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+                            Do you provide web development services in Bangalore?
+                            <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+                        </summary>
+                        <p class="mt-3 text-slate-600">Yes! Soance provides WordPress development, web design, mobile app development and SEO services in Whitefield, KR Puram, Kurudusonnenahalli and across Bangalore (Bengaluru). We work remotely and deliver the same quality for all our clients in Karnataka.</p>
+                    </details>
+
+                    <details class="group rounded-2xl border border-slate-200 bg-white px-6 py-4 open:bg-slate-50">
+                        <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+                            Can you build a mobile app for my business?
+                            <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+                        </summary>
+                        <p class="mt-3 text-slate-600">Absolutely. We develop custom mobile apps for Android and iOS for businesses in Kannur, Thalassery, Bangalore and across India. Whether you need a business app, e-commerce app, or service booking app, Soance can build it.</p>
+                    </details>
+
+                    <details class="group rounded-2xl border border-slate-200 bg-white px-6 py-4 open:bg-slate-50">
+                        <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+                            What services does Soance offer in Thalassery and Kadirur?
+                            <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+                        </summary>
+                        <p class="mt-3 text-slate-600">Soance offers WordPress website development, website redesign, e-commerce development, mobile app development, landing page design, SEO optimization, WhatsApp integration, and ongoing website maintenance for businesses in Thalassery, Kadirur, Pulliode and all of Kannur district.</p>
+                    </details>
+
+                    <details class="group rounded-2xl border border-slate-200 bg-white px-6 py-4 open:bg-slate-50">
+                        <summary class="font-semibold cursor-pointer list-none flex justify-between items-center">
+                            Why should I hire a web developer near me in Kannur or Bangalore?
+                            <span class="text-slate-400 group-open:rotate-180 transition">⌄</span>
+                        </summary>
+                        <p class="mt-3 text-slate-600">Hiring a local web developer like Soance means faster communication, better understanding of your market, and easy post-launch support. We serve businesses in Kannur, Thalassery, Kadirur, Whitefield, KR Puram and Kurudusonnenahalli with personalized service.</p>
+                    </details>
                 </div>
             </div>
         </section>
-        <!-- /PACKAGES SECTION -->
 
-        <!-- PORTFOLIO SECTION -->
-        <section style="padding: 80px 0; background: #f9f9f9; display:none;" id="portfolio">
-            <div class="container">
-                <div class="flex flex-wrap">
-                    <div class="w-full" style="text-align:center; margin-bottom:40px;">
-                        <h2 style="font-size:32px; letter-spacing:2px; font-family:'SourceSans SemiBold';">SAMPLE WORK</h2>
-                        <p style="font-size:18px; margin-top:15px; color:#555;">Examples of the kind of websites we build.</p>
-                    </div>
-                    <div class="w-full md:w-1/3" style="margin-bottom:30px;">
-                        <div style="border:1px solid #eee; border-radius:8px; overflow:hidden;">
-                            <div style="background:#e8e8e8; height:200px; display:flex; align-items:center; justify-content:center;">
-                                <p style="color:#888; font-size:16px;">Sample Homepage Screenshot</p>
-                            </div>
-                            <div style="padding:20px;">
-                                <h4 style="font-family:'SourceSans SemiBold'; font-size:17px; margin-bottom:8px;">Sample website concept</h4>
-                                <p style="color:#777; font-size:14px;">Demo homepage for clinic</p>
-                            </div>
+        <!-- AREAS WE SERVE -->
+        <section id="areas-served" class="py-20 bg-slate-50 font-sans">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="max-w-2xl mb-10">
+                    <span class="text-xs font-semibold tracking-[3px] uppercase text-indigo-600">Reach</span>
+                    <h2 class="mt-3 text-4xl font-semibold tracking-tight">We work with clients near and far</h2>
+                    <p class="mt-2 text-slate-600">Professional websites and apps for businesses across India and internationally — with strong roots in Kerala and Karnataka.</p>
+                </div>
+
+                <!-- Global -->
+                <div class="mb-12">
+                    <h3 class="font-semibold text-lg mb-5 tracking-tight">Around the world</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="rounded-2xl bg-white p-6 border border-slate-100">
+                            <div class="font-semibold">United States &amp; Canada</div>
+                            <div class="text-sm text-slate-600 mt-1.5">WordPress sites, mobile apps, and e-commerce for North American small businesses.</div>
                         </div>
-                    </div>
-                    <div class="w-full md:w-1/3" style="margin-bottom:30px;">
-                        <div style="border:1px solid #eee; border-radius:8px; overflow:hidden;">
-                            <div style="background:#e8e8e8; height:200px; display:flex; align-items:center; justify-content:center;">
-                                <p style="color:#888; font-size:16px;">Sample Homepage Screenshot</p>
-                            </div>
-                            <div style="padding:20px;">
-                                <h4 style="font-family:'SourceSans SemiBold'; font-size:17px; margin-bottom:8px;">Sample business landing page</h4>
-                                <p style="color:#777; font-size:14px;">Demo homepage for restaurant</p>
-                            </div>
+                        <div class="rounded-2xl bg-white p-6 border border-slate-100">
+                            <div class="font-semibold">United Kingdom &amp; Europe</div>
+                            <div class="text-sm text-slate-600 mt-1.5">Custom web development and SEO for businesses in the UK and across Europe.</div>
                         </div>
-                    </div>
-                    <div class="w-full md:w-1/3" style="margin-bottom:30px;">
-                        <div style="border:1px solid #eee; border-radius:8px; overflow:hidden;">
-                            <div style="background:#e8e8e8; height:200px; display:flex; align-items:center; justify-content:center;">
-                                <p style="color:#888; font-size:16px;">Sample Homepage Screenshot</p>
-                            </div>
-                            <div style="padding:20px;">
-                                <h4 style="font-family:'SourceSans SemiBold'; font-size:17px; margin-bottom:8px;">Sample website concept</h4>
-                                <p style="color:#777; font-size:14px;">Demo homepage for local shop</p>
-                            </div>
+                        <div class="rounded-2xl bg-white p-6 border border-slate-100">
+                            <div class="font-semibold">UAE &amp; Middle East</div>
+                            <div class="text-sm text-slate-600 mt-1.5">Professional websites and apps for businesses in Dubai, Abu Dhabi and the region.</div>
+                        </div>
+                        <div class="rounded-2xl bg-white p-6 border border-slate-100">
+                            <div class="font-semibold">Australia &amp; New Zealand</div>
+                            <div class="text-sm text-slate-600 mt-1.5">Modern, fast websites and landing pages for businesses down under.</div>
+                        </div>
+                        <div class="rounded-2xl bg-white p-6 border border-slate-100">
+                            <div class="font-semibold">Southeast Asia</div>
+                            <div class="text-sm text-slate-600 mt-1.5">Reliable web solutions for companies in Singapore, Malaysia and beyond.</div>
+                        </div>
+                        <div class="rounded-2xl bg-white p-6 border border-slate-100 ring-1 ring-offset-2 ring-indigo-100">
+                            <div class="font-semibold">Worldwide (Remote)</div>
+                            <div class="text-sm text-slate-600 mt-1.5">Wherever you are, we deliver high-quality work with clear communication via WhatsApp and calls.</div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- /PORTFOLIO SECTION -->
 
-        <!-- PROCESS SECTION -->
-        <section style="padding: 80px 0; background: #fff;" id="process">
-            <div class="container">
-                <div class="flex flex-wrap">
-                    <div class="w-full" style="text-align:center; margin-bottom:40px;">
-                        <h2 style="font-size:32px; letter-spacing:2px; font-family:'SourceSans SemiBold';">HOW WE WORK</h2>
-                        <p style="font-size:18px; margin-top:15px; color:#555;">A simple, straightforward process from start to finish.</p>
-                    </div>
-                    <div class="w-full sm:w-1/2 md:w-1/4" style="text-align:center; margin-bottom:30px;">
-                        <div style="padding:30px 20px;">
-                            <div style="width:60px; height:60px; background:#2563EB; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
-                                <span style="color:#fff; font-size:22px; font-family:'SourceSans Bold';">1</span>
-                            </div>
-                            <h4 style="font-family:'SourceSans SemiBold'; font-size:18px; margin-bottom:10px;">Discuss Requirements</h4>
-                            <p style="color:#666; font-size:15px;">We understand your business and what you need from your website.</p>
+                <!-- Local -->
+                <div>
+                    <h3 class="font-semibold text-lg mb-5 tracking-tight">Kerala &amp; Karnataka</h3>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-white border border-slate-100 rounded-2xl p-6">
+                            <a href="/website-development-company-in-kannur.html" class="font-semibold hover:text-indigo-600">Kannur</a>
+                            <p class="mt-1.5 text-sm text-slate-600">Web development, WordPress, apps &amp; SEO for Kannur and nearby areas.</p>
+                        </div>
+                        <div class="bg-white border border-slate-100 rounded-2xl p-6">
+                            <a href="/website-development-company-in-thalassery.html" class="font-semibold hover:text-indigo-600">Thalassery</a>
+                            <p class="mt-1.5 text-sm text-slate-600">Full-service design and development for businesses in Thalassery.</p>
+                        </div>
+                        <div class="bg-white border border-slate-100 rounded-2xl p-6">
+                            <div class="font-semibold">Kadirur &amp; Pulliode</div>
+                            <p class="mt-1.5 text-sm text-slate-600">Our home base. Complete digital services for local businesses.</p>
+                        </div>
+                        <div class="bg-white border border-slate-100 rounded-2xl p-6">
+                            <a href="/website-development-company-in-whitefield.html" class="font-semibold hover:text-indigo-600">Whitefield, Bangalore</a>
+                            <p class="mt-1.5 text-sm text-slate-600">Modern websites and apps for startups and businesses in Whitefield.</p>
+                        </div>
+                        <div class="bg-white border border-slate-100 rounded-2xl p-6">
+                            <a href="/website-development-company-in-kr-puram.html" class="font-semibold hover:text-indigo-600">KR Puram, Bangalore</a>
+                            <p class="mt-1.5 text-sm text-slate-600">Web design, development and mobile apps for KR Puram &amp; surroundings.</p>
+                        </div>
+                        <div class="bg-white border border-slate-100 rounded-2xl p-6">
+                            <a href="/website-development-company-in-bangalore.html" class="font-semibold hover:text-indigo-600">Bangalore &amp; Karnataka</a>
+                            <p class="mt-1.5 text-sm text-slate-600">Affordable, high-quality WordPress and app development across Bengaluru.</p>
                         </div>
                     </div>
-                    <div class="w-full sm:w-1/2 md:w-1/4" style="text-align:center; margin-bottom:30px;">
-                        <div style="padding:30px 20px;">
-                            <div style="width:60px; height:60px; background:#2563EB; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
-                                <span style="color:#fff; font-size:22px; font-family:'SourceSans Bold';">2</span>
-                            </div>
-                            <h4 style="font-family:'SourceSans SemiBold'; font-size:18px; margin-bottom:10px;">Design &amp; Build</h4>
-                            <p style="color:#666; font-size:15px;">We design and develop your WordPress website cleanly and efficiently.</p>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-1/2 md:w-1/4" style="text-align:center; margin-bottom:30px;">
-                        <div style="padding:30px 20px;">
-                            <div style="width:60px; height:60px; background:#2563EB; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
-                                <span style="color:#fff; font-size:22px; font-family:'SourceSans Bold';">3</span>
-                            </div>
-                            <h4 style="font-family:'SourceSans SemiBold'; font-size:18px; margin-bottom:10px;">Review &amp; Revise</h4>
-                            <p style="color:#666; font-size:15px;">You review the website, request changes, and we refine until it's right.</p>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-1/2 md:w-1/4" style="text-align:center; margin-bottom:30px;">
-                        <div style="padding:30px 20px;">
-                            <div style="width:60px; height:60px; background:#2563EB; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 20px;">
-                                <span style="color:#fff; font-size:22px; font-family:'SourceSans Bold';">4</span>
-                            </div>
-                            <h4 style="font-family:'SourceSans SemiBold'; font-size:18px; margin-bottom:10px;">Launch &amp; Support</h4>
-                            <p style="color:#666; font-size:15px;">We launch your website and stay available for support after going live.</p>
+
+                    <div class="mt-8">
+                        <div class="text-sm font-medium text-slate-500 mb-3">All Kerala districts</div>
+                        <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-700">
+                            <a href="/website-development-company-in-thalassery.html" class="hover:text-indigo-600">Thalassery</a>
+                            <a href="/website-development-company-in-kannur.html" class="hover:text-indigo-600">Kannur</a>
+                            <a href="/website-development-company-in-koothuparamba.html" class="hover:text-indigo-600">Koothuparamba</a>
+                            <a href="/website-development-company-in-kasaragod.html" class="hover:text-indigo-600">Kasaragod</a>
+                            <a href="/website-development-company-in-kozhikode.html" class="hover:text-indigo-600">Kozhikode</a>
+                            <a href="/website-development-company-in-wayanad.html" class="hover:text-indigo-600">Wayanad</a>
+                            <a href="/website-development-company-in-malappuram.html" class="hover:text-indigo-600">Malappuram</a>
+                            <a href="/website-development-company-in-palakkad.html" class="hover:text-indigo-600">Palakkad</a>
+                            <a href="/website-development-company-in-thrissur.html" class="hover:text-indigo-600">Thrissur</a>
+                            <a href="/website-development-company-in-ernakulam.html" class="hover:text-indigo-600">Ernakulam</a>
+                            <a href="/website-development-company-in-idukki.html" class="hover:text-indigo-600">Idukki</a>
+                            <a href="/website-development-company-in-kottayam.html" class="hover:text-indigo-600">Kottayam</a>
+                            <a href="/website-development-company-in-alappuzha.html" class="hover:text-indigo-600">Alappuzha</a>
+                            <a href="/website-development-company-in-pathanamthitta.html" class="hover:text-indigo-600">Pathanamthitta</a>
+                            <a href="/website-development-company-in-kollam.html" class="hover:text-indigo-600">Kollam</a>
+                            <a href="/website-development-company-in-trivandrum.html" class="hover:text-indigo-600">Trivandrum</a>
+                            <a href="/website-development-company-in-whitefield.html" class="hover:text-indigo-600">Whitefield</a>
+                            <a href="/website-development-company-in-kr-puram.html" class="hover:text-indigo-600">KR Puram</a>
+                            <a href="/website-development-company-in-bangalore.html" class="hover:text-indigo-600">Bangalore</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- /PROCESS SECTION -->
 
-        <!-- CONTACT CTA SECTION -->
-        <section style="padding: 80px 0; background: #2563EB;" id="contact-cta">
-            <div class="container" style="text-align:center;">
-                <h2 style="font-size:36px; color:#fff; font-family:'SourceSans SemiBold'; margin-bottom:15px;">Ready to get your business online?</h2>
-                <p style="font-size:20px; color:rgba(255,255,255,0.85); margin-bottom:35px;">Get in touch today — we're easy to talk to.</p>
-                <button type="button" class="say_hello open-contact-popup" style="background:#fff; color:#2563EB; border-color:#fff; margin-right:15px; display:inline-block;">Get a Quote</button>
-                <a href="https://wa.me/918217445213" target="_blank" rel="noopener noreferrer" class="say_hello" style="background:#25D366; border-color:#25D366; color:#fff; display:inline-block;">Chat on WhatsApp</a>
-            </div>
-        </section>
-        <!-- /CONTACT CTA SECTION -->
-
-        <!-- FAQ SECTION - For Google Featured Snippets -->
-        <section style="padding: 80px 0; background: #fff;" id="faq">
-            <div class="container">
-                <div class="flex flex-wrap">
-                    <div class="w-full" style="text-align:center; margin-bottom:40px;">
-                        <h2 style="font-size:32px; letter-spacing:2px; font-family:'SourceSans SemiBold';">FREQUENTLY ASKED QUESTIONS</h2>
-                        <p style="font-size:18px; margin-top:15px; color:#555;">Common questions about web development, WordPress & mobile app services</p>
+        <!-- FOOTER -->
+        <footer class="border-t bg-white font-sans">
+            <div class="max-w-6xl mx-auto px-6 pt-12 pb-9">
+                <div class="flex flex-col lg:flex-row gap-y-8">
+                    <div class="lg:w-1/4">
+                        <a href="/" class="inline-block">
+                            <img src="images/soance.png" alt="Soance" class="h-7">
+                        </a>
+                        <div class="mt-5 text-sm text-slate-500">
+                            Professional WordPress websites &amp; mobile apps.<br>
+                            Based in Kadirur, Kannur, Kerala.
+                        </div>
                     </div>
-                    <div class="w-full">
-                        <div style="margin-bottom:25px; padding:25px; border:1px solid #eee; border-radius:8px;">
-                            <h3 style="font-size:18px; font-family:'SourceSans SemiBold'; margin-bottom:10px;">Who is the best web developer in Kannur?</h3>
-                            <p style="color:#555; font-size:15px;">Soance Innovations LLP is a top-rated web development company based in Kadirur, Kannur. We specialize in WordPress website development, mobile app development, e-commerce solutions and SEO services for businesses across Kannur, Thalassery, and all of Kerala.</p>
+
+                    <div class="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-y-8 text-sm">
+                        <div>
+                            <div class="font-semibold text-slate-900 mb-3">Company</div>
+                            <div class="flex flex-col gap-y-[7px] text-slate-600">
+                                <a href="about.html" class="hover:text-slate-900">About</a>
+                                <a href="contact.html" class="hover:text-slate-900">Contact</a>
+                                <a href="https://wa.me/918217445213" target="_blank" class="hover:text-slate-900">WhatsApp</a>
+                            </div>
                         </div>
-                        <div style="margin-bottom:25px; padding:25px; border:1px solid #eee; border-radius:8px;">
-                            <h3 style="font-size:18px; font-family:'SourceSans SemiBold'; margin-bottom:10px;">How much does a website cost in Kannur?</h3>
-                            <p style="color:#555; font-size:15px;">At Soance, we offer affordable, custom website packages tailored to your needs. We provide web development services in Kannur, Thalassery, Kadirur and Pulliode with no hidden charges.</p>
+                        <div>
+                            <div class="font-semibold text-slate-900 mb-3">Legal</div>
+                            <div class="flex flex-col gap-y-[7px] text-slate-600">
+                                <a href="/privacy.html" class="hover:text-slate-900">Privacy Policy</a>
+                                <a href="/terms-of-service.html" class="hover:text-slate-900">Terms of Service</a>
+                                <a href="/refund-policy.html" class="hover:text-slate-900">Refund Policy</a>
+                            </div>
                         </div>
-                        <div style="margin-bottom:25px; padding:25px; border:1px solid #eee; border-radius:8px;">
-                            <h3 style="font-size:18px; font-family:'SourceSans SemiBold'; margin-bottom:10px;">Do you provide web development services in Bangalore?</h3>
-                            <p style="color:#555; font-size:15px;">Yes! Soance provides WordPress development, web design, mobile app development and SEO services in Whitefield, KR Puram, Kurudusonnenahalli and across Bangalore (Bengaluru). We work remotely and deliver the same quality for all our clients in Karnataka.</p>
+                        <div>
+                            <div class="font-semibold text-slate-900 mb-3">Get in touch</div>
+                            <div class="flex flex-col gap-y-1.5">
+                                <a href="mailto:info@soance.com" class="text-slate-600 hover:text-slate-900">info@soance.com</a>
+                                <a href="https://wa.me/918217445213" target="_blank" class="text-emerald-600 hover:text-emerald-700">Chat on WhatsApp</a>
+                                <a href="https://www.linkedin.com/company/soance" target="_blank" class="text-slate-600 hover:text-slate-900">LinkedIn</a>
+                            </div>
                         </div>
-                        <div style="margin-bottom:25px; padding:25px; border:1px solid #eee; border-radius:8px;">
-                            <h3 style="font-size:18px; font-family:'SourceSans SemiBold'; margin-bottom:10px;">Can you build a mobile app for my business?</h3>
-                            <p style="color:#555; font-size:15px;">Absolutely. We develop custom mobile apps for Android and iOS for businesses in Kannur, Thalassery, Bangalore and across India. Whether you need a business app, e-commerce app, or service booking app, Soance can build it.</p>
-                        </div>
-                        <div style="margin-bottom:25px; padding:25px; border:1px solid #eee; border-radius:8px;">
-                            <h3 style="font-size:18px; font-family:'SourceSans SemiBold'; margin-bottom:10px;">What services does Soance offer in Thalassery and Kadirur?</h3>
-                            <p style="color:#555; font-size:15px;">Soance offers WordPress website development, website redesign, e-commerce development, mobile app development, landing page design, SEO optimization, WhatsApp integration, and ongoing website maintenance for businesses in Thalassery, Kadirur, Pulliode and all of Kannur district.</p>
-                        </div>
-                        <div style="margin-bottom:25px; padding:25px; border:1px solid #eee; border-radius:8px;">
-                            <h3 style="font-size:18px; font-family:'SourceSans SemiBold'; margin-bottom:10px;">Why should I hire a web developer near me in Kannur or Bangalore?</h3>
-                            <p style="color:#555; font-size:15px;">Hiring a local web developer like Soance means faster communication, better understanding of your market, affordable pricing, and easy post-launch support. We serve businesses in Kannur, Thalassery, Kadirur, Whitefield, KR Puram and Kurudusonnenahalli with personalized service.</p>
-                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-14 pt-6 border-t text-xs text-slate-500 flex flex-wrap items-center gap-x-4 gap-y-1">
+                    <div>© Soance Innovations LLP</div>
+                    <div class="hidden sm:block">•</div>
+                    <div class="flex flex-wrap gap-x-4">
+                        <a href="/website-development-company-in-kannur.html">Kannur</a>
+                        <a href="/website-development-company-in-thalassery.html">Thalassery</a>
+                        <a href="/website-development-company-in-bangalore.html">Bangalore</a>
+                        <a href="/website-development-company-in-whitefield.html">Whitefield</a>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- /FAQ SECTION -->
-
-        <!-- AROUND THE WORLD & AREAS WE SERVE -->
-        <section class="reach-section" id="areas-served">
-            <div class="container">
-                <div class="reach-section__header">
-                    <h2>Around the World &amp; Areas We Serve</h2>
-                    <p>Professional web development, WordPress &amp; mobile app services for clients worldwide — with deep local expertise across Kerala and Karnataka.</p>
-                </div>
-
-                <div class="reach-block" id="around-the-world">
-                    <h3 class="reach-block__title">Around the World</h3>
-                    <p class="reach-block__subtitle">We work remotely with businesses across the globe — same quality, clear communication, and on-time delivery.</p>
-                    <div class="flex flex-wrap">
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card">
-                                <h4>United States &amp; Canada</h4>
-                                <p>WordPress websites, mobile apps, and e-commerce solutions for startups and small businesses across North America.</p>
-                            </div>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card">
-                                <h4>United Kingdom &amp; Europe</h4>
-                                <p>Custom web design, WordPress development, and SEO services for businesses in the UK, Germany, France, and across Europe.</p>
-                            </div>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card">
-                                <h4>UAE &amp; Middle East</h4>
-                                <p>Professional websites and mobile apps for businesses in Dubai, Abu Dhabi, Saudi Arabia, and the wider Middle East region.</p>
-                            </div>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card">
-                                <h4>Australia &amp; New Zealand</h4>
-                                <p>Mobile-friendly WordPress sites, landing pages, and app development for businesses across Australia and New Zealand.</p>
-                            </div>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card">
-                                <h4>Southeast Asia</h4>
-                                <p>Affordable web development and digital solutions for businesses in Singapore, Malaysia, Indonesia, and neighbouring countries.</p>
-                            </div>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card reach-card--highlight">
-                                <h4>Worldwide (Remote)</h4>
-                                <p>Wherever you are, we can build your website or app remotely. WhatsApp, video calls, and email keep every project on track.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="reach-block" id="local-areas">
-                    <h3 class="reach-block__title">Areas We Serve</h3>
-                    <p class="reach-block__subtitle">Professional web development, WordPress &amp; mobile app services across Kerala and Karnataka.</p>
-                    <div class="flex flex-wrap">
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card">
-                                <h4><a href="/website-development-company-in-kannur.html">Kannur</a></h4>
-                                <p>Web development, WordPress design, mobile app development, e-commerce websites and SEO services for businesses in Kannur city and surrounding areas.</p>
-                            </div>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card">
-                                <h4><a href="/website-development-company-in-thalassery.html">Thalassery</a></h4>
-                                <p>Complete web design and WordPress development services for businesses in Thalassery. Affordable websites, mobile apps and digital solutions.</p>
-                            </div>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card">
-                                <h4>Kadirur &amp; Pulliode</h4>
-                                <p>Our home base! WordPress website development, web design, mobile app development and full digital services for businesses in Kadirur and Pulliode.</p>
-                            </div>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card">
-                                <h4><a href="/website-development-company-in-whitefield.html">Whitefield, Bangalore</a></h4>
-                                <p>Professional web development, WordPress design and mobile app services for startups and businesses in Whitefield, Bengaluru. Fast delivery and affordable pricing.</p>
-                            </div>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card">
-                                <h4><a href="/website-development-company-in-kr-puram.html">KR Puram, Bangalore</a></h4>
-                                <p>Web design, WordPress development, e-commerce solutions and mobile app development for businesses in KR Puram, Bengaluru and nearby areas.</p>
-                            </div>
-                        </div>
-                        <div class="w-full sm:w-1/2 md:w-1/3 reach-card-wrap">
-                            <div class="reach-card">
-                                <h4><a href="/website-development-company-in-bangalore.html">Bangalore &amp; Karnataka</a></h4>
-                                <p>Affordable WordPress websites, custom web applications and mobile app development for businesses across Bengaluru and Karnataka.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="reach-locations">
-                        <h4 class="reach-locations__title">All Kerala Districts</h4>
-                        <div class="reach-locations__grid">
-                            <a href="/website-development-company-in-thalassery.html">Thalassery</a>
-                            <a href="/website-development-company-in-kannur.html">Kannur</a>
-                            <a href="/website-development-company-in-koothuparamba.html">Koothuparamba</a>
-                            <a href="/website-development-company-in-kasaragod.html">Kasaragod</a>
-                            <a href="/website-development-company-in-kozhikode.html">Kozhikode</a>
-                            <a href="/website-development-company-in-wayanad.html">Wayanad</a>
-                            <a href="/website-development-company-in-malappuram.html">Malappuram</a>
-                            <a href="/website-development-company-in-palakkad.html">Palakkad</a>
-                            <a href="/website-development-company-in-thrissur.html">Thrissur</a>
-                            <a href="/website-development-company-in-ernakulam.html">Ernakulam</a>
-                            <a href="/website-development-company-in-idukki.html">Idukki</a>
-                            <a href="/website-development-company-in-kottayam.html">Kottayam</a>
-                            <a href="/website-development-company-in-alappuzha.html">Alappuzha</a>
-                            <a href="/website-development-company-in-pathanamthitta.html">Pathanamthitta</a>
-                            <a href="/website-development-company-in-kollam.html">Kollam</a>
-                            <a href="/website-development-company-in-trivandrum.html">Trivandrum</a>
-                            <a href="/website-development-company-in-whitefield.html">Whitefield</a>
-                            <a href="/website-development-company-in-kr-puram.html">KR Puram</a>
-                            <a href="/website-development-company-in-bangalore.html">Bangalore</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- /AROUND THE WORLD & AREAS WE SERVE -->
-
-        <!-- footer section -->
-        <section class="footer_section">
-            <div class="container">
-                <div class="flex flex-wrap time_to_build">
-                    <div class="w-full">
-                        <p>It’s time to build something awesome together</p>
-                        <a href="contact.html" class="contact_footer_link">build with us</a>
-                    </div>
-                </div>
-                <div class="footer_menu">
-                    <div class="w-full sm:w-1/6 pl-0">
-                        <a href="/"><img src="images/soance.png" class="footer_logo"></a>
-                    </div>
-                    <div class="w-full sm:w-2/3">
-                        <div class="footer-devp">
-                            <p>Soance</p>
-                            <div class="footer-devp-links">
-                                <a href="/privacy.html">Privacy policy</a>
-                                <a href="/terms-of-service.html">Terms of use</a>
-                                <a href="/refund-policy.html">Refund Policy</a>
-                            </div>
-                            <div class="footer-devp-links" style="margin-top:10px; flex-wrap:wrap;">
-                                <span style="color:#888; font-size:13px; margin-right:8px;">Locations:</span>
-                                <a href="/website-development-company-in-thalassery.html">Thalassery</a>
-                                <a href="/website-development-company-in-kannur.html">Kannur</a>
-                                <a href="/website-development-company-in-alappuzha.html">Alappuzha</a>
-                                <a href="/website-development-company-in-ernakulam.html">Ernakulam</a>
-                                <a href="/website-development-company-in-idukki.html">Idukki</a>
-                                <a href="/website-development-company-in-kasaragod.html">Kasaragod</a>
-                                <a href="/website-development-company-in-kollam.html">Kollam</a>
-                                <a href="/website-development-company-in-kottayam.html">Kottayam</a>
-                                <a href="/website-development-company-in-kozhikode.html">Kozhikode</a>
-                                <a href="/website-development-company-in-malappuram.html">Malappuram</a>
-                                <a href="/website-development-company-in-palakkad.html">Palakkad</a>
-                                <a href="/website-development-company-in-pathanamthitta.html">Pathanamthitta</a>
-                                <a href="/website-development-company-in-trivandrum.html">Trivandrum</a>
-                                <a href="/website-development-company-in-thrissur.html">Thrissur</a>
-                                <a href="/website-development-company-in-wayanad.html">Wayanad</a>
-                                <a href="/website-development-company-in-koothuparamba.html">Koothuparamba</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="w-full sm:w-1/6">
-                        <div class="footer-social-links">
-                            <ul>
-                                <li><a href="https://wa.me/918217445213" target="_blank" rel="noopener noreferrer" style="color:#555;">WhatsApp</a></li>
-                                <li><a href="mailto:info@soanceinnovations.com" style="color:#555;">Email</a></li>
-                                <li><a href="https://www.linkedin.com/company/soance" target="_blank" rel="noopener noreferrer" style="color:#555;">LinkedIn</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-        </section>
-        <!-- ./footer section -->
+        </footer>
 
 
 
