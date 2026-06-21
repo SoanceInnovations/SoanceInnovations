@@ -3174,6 +3174,7 @@ body:after{
     align-items: center;
     border-radius: 20px;
     pointer-events:none;
+    font-size:13px;
 }
 
 
