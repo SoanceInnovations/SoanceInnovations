@@ -1021,14 +1021,7 @@
 
                 <div class="mt-8 pt-6 border-t text-xs text-slate-500 flex flex-wrap items-center gap-x-4 gap-y-1">
                     <div>© Soance Innovations LLP</div>
-                    <div class="hidden sm:block">•</div>
-                    <div class="flex flex-wrap gap-x-4">
-                        <a href="/website-development-company-in-kannur.html">Kannur</a>
-                        <a href="/website-development-company-in-thalassery.html">Thalassery</a>
-                        <a href="/website-development-company-in-bangalore.html">Bangalore</a>
-                        <a href="/website-development-company-in-whitefield.html">Whitefield</a>
-                        <a href="/website-development-company-in-kr-puram.html">KR Puram</a>
-                    </div>
+                    
                 </div>
             </div>
         </footer>
@@ -1044,10 +1037,6 @@
         <div class="contact-modal__backdrop"></div>
         <div class="contact-modal__dialog">
             <button type="button" class="contact-modal__close" aria-label="Close">&times;</button>
-            <div class="contact-modal__header">
-                <h3 id="contact-modal-title">Get in Touch</h3>
-                <p>Tell us about your project and we'll get back to you shortly.</p>
-            </div>
             <div class="contact-modal__form">
                 <div class="hs-form-frame" data-region="na2" data-form-id="7c1b3caa-ee31-4758-9e63-f4656663e77d" data-portal-id="246420791"></div>
             </div>
@@ -1115,11 +1104,22 @@
         function openContactModal() {
             $('#contact-modal').addClass('is-open').attr('aria-hidden', 'false');
             $('body').addClass('modal-open');
+
+              setTimeout(() => {
+    const element = document.querySelector('.hs-form-frame');
+
+    if (element) {
+        const height = element.offsetHeight;
+        element.style.maxHeight = `${height - 80}px`;
+    }
+}, 1000); // wait 1 second
         }
 
         function closeContactModal() {
             $('#contact-modal').removeClass('is-open').attr('aria-hidden', 'true');
             $('body').removeClass('modal-open');
+              const element = document.querySelector('.hs-form-frame');
+              element.style.removeProperty('max-height');
         }
 
         $(document).on('click', '.open-contact-popup', function(e) {

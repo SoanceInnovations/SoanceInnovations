@@ -104,8 +104,8 @@
 
 /* Row uses flexbox */
 .flex.flex-wrap {
-    margin-right: -12px;
-    margin-left: -12px;
+    /* margin-right: -12px; */
+    /* margin-left: -12px; */
 }
 /* Tailwind column widths need box-sizing and horizontal gutter padding */
 [class*="w-1/"], [class*="w-2/"], [class*="w-full"] {
@@ -116,8 +116,8 @@
 /* Reduce column gutter on small screens */
 @media (max-width: 640px) {
     .flex.flex-wrap {
-        margin-right: -8px;
-        margin-left: -8px;
+        /* margin-right: -8px; */
+        /* margin-left: -8px; */
     }
     [class*="w-1/"], [class*="w-2/"], [class*="w-full"] {
         padding-left: 8px;
@@ -2017,6 +2017,7 @@ section.header_section.stick.fixed_out {
     .header_section {
         padding-left: 0 !important;
     }
+    
 }
 @media only screen and (max-width:480px) {
     .pro_name p {
@@ -3087,7 +3088,7 @@ iframe#chk_frame {
         font-size: 25px;
     }
     div#home-center {
-        bottom: 100px;
+        bottom: 50px;
     }
     section.testimonials_section h2,
     section.testimonials_section .carousel p.testimonial_para {
@@ -3332,7 +3333,7 @@ body:after{
     align-items: center;
     justify-content: space-between;
     min-height: 0;
-    padding: 10px 0 10px 0;
+    padding: 10px 0 10px 20px;
 }
 .header_section.stick .nav_wrap {
     float: none;
@@ -3575,7 +3576,7 @@ body.modal-open {
     max-width: 520px;
     max-height: 90vh;
     overflow-y: auto;
-    padding: 36px 32px 32px;
+    padding: 0px 0px 52px 0px;
     box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
     transform: translateY(16px) scale(0.97);
     transition: transform 0.3s ease;
@@ -3625,7 +3626,6 @@ body.modal-open {
 .contact-modal__form .hs-form-frame {
     width: 100%;
     max-width: 100%;
-    max-height: 927px;
 }
 
 .nav_wrap {
