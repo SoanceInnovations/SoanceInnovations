@@ -2,4 +2,9 @@ User-agent: *
 Allow: /
 Disallow: /sendMail.php
 
+# Permit OpenAI search discovery and citation.
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /sendMail.php
+
 Sitemap: https://www.soance.com/sitemap.xml
