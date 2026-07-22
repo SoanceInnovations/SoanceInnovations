@@ -33,7 +33,7 @@
                 logoBadge.className = 'case-study-card__media-logo';
                 var logoImage = document.createElement('img');
                 logoImage.src = study.logo;
-                logoImage.alt = study.company + ' fictional logo';
+                logoImage.alt = study.company + (study.fictional ? ' fictional logo' : ' case study wordmark');
                 logoImage.loading = 'lazy';
                 logoImage.decoding = 'async';
                 logoBadge.appendChild(logoImage);
@@ -132,8 +132,8 @@
                 url: pageUrl,
                 mainEntityOfPage: pageUrl,
                 articleSection: study.industry,
-                datePublished: '2026-07-14',
-                dateModified: '2026-07-14',
+                datePublished: study.datePublished || '2026-07-14',
+                dateModified: '2026-07-22',
                 author: {
                     '@type': 'Organization',
                     name: 'Soance Innovations LLP',
@@ -148,7 +148,9 @@
                         url: 'https://www.soance.com/images/soance.png'
                     }
                 },
-                about: 'Transparent fictionalized digital product case study'
+                about: study.fictional
+                    ? 'Transparent fictionalized digital product case study'
+                    : 'Digital product client case study'
             });
         }
     }
@@ -192,7 +194,8 @@
 
         renderStudyTitle(title, study);
         if (client) {
-            client.textContent = study.company + ' · ' + study.industry + ' · Fictional client';
+            client.textContent = study.company + ' · ' + study.industry + ' · ' +
+                (study.fictional ? 'Fictional client' : 'Client project');
         }
         if (readingTime) {
             readingTime.textContent = 'Reading time about ' + study.readingMinutes + ' mins';

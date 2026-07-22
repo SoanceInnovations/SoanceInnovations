@@ -30,7 +30,7 @@ def main() -> None:
     urls = [
         "  <url>\n"
         "    <loc>https://www.soance.com/case-studies.html</loc>\n"
-        "    <lastmod>2026-07-14</lastmod>\n"
+        "    <lastmod>2026-07-22</lastmod>\n"
         "    <changefreq>monthly</changefreq>\n"
         "    <priority>0.8</priority>\n"
         "  </url>"
@@ -38,7 +38,7 @@ def main() -> None:
     urls.extend(
         "  <url>\n"
         f"    <loc>https://www.soance.com/case-studies/{study['slug']}.html</loc>\n"
-        "    <lastmod>2026-07-14</lastmod>\n"
+        "    <lastmod>2026-07-22</lastmod>\n"
         "    <changefreq>monthly</changefreq>\n"
         "    <priority>0.7</priority>\n"
         "  </url>"
