@@ -241,7 +241,7 @@ body.case-page::after {
 }
 
 .case-detail-hero {
-    padding: 68px 0 295px;
+    padding: 20px 0 20px;
     background: #fff;
 }
 
@@ -270,11 +270,12 @@ body.case-page::after {
     gap: 11px;
     max-width: 1240px;
     margin-top: 54px;
-    padding-top: 44px;
-    padding-left: 310px;
+    padding-top: 20px;
+    padding-left: 0px;
     border-top: 1px solid var(--case-line);
     color: #667085;
     font-size: 16px;
+    justify-content:center;
 }
 
 .case-detail-meta__icon {

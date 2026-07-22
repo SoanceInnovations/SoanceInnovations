@@ -19,7 +19,8 @@ const DATA_PATH = path.join(ROOT, 'js', 'case-studies-data.js');
 const INDEX_PATH = path.join(ROOT, 'case-studies.html');
 const OUTPUT_DIR = path.join(ROOT, 'case-studies');
 const SITE_URL = 'https://www.soance.com';
-const BUILD_DATE = '2026-07-14';
+const DEFAULT_PUBLISHED_DATE = '2026-07-14';
+const BUILD_DATE = '2026-07-22';
 
 function loadStudies() {
   const sandbox = { window: {} };
@@ -53,6 +54,14 @@ function localPageUrl(study) {
   return `/case-studies/${encodeURIComponent(study.slug)}.html`;
 }
 
+function projectLabel(study) {
+  return study.fictional ? 'Fictional client' : 'Client project';
+}
+
+function logoAlt(study) {
+  return `${study.company} ${study.fictional ? 'fictional logo' : 'case study wordmark'}`;
+}
+
 function jsonLd(value) {
   return JSON.stringify(value, null, 2).replaceAll('<', '\\u003c');
 }
@@ -70,7 +79,7 @@ function cardMarkup(study, headingLevel = 2) {
                     <article id="case-${escapeHtml(study.slug)}" class="case-study-card">
                         <a class="case-study-card__media" href="${url}" aria-label="Read ${title}">
                             <img class="case-study-card__photo" src="/${escapeHtml(image)}" alt="${title}" loading="lazy" decoding="async">
-                            <span class="case-study-card__media-logo"><img src="/${escapeHtml(logo)}" alt="${company} fictional logo" loading="lazy" decoding="async"></span>
+                            <span class="case-study-card__media-logo"><img src="/${escapeHtml(logo)}" alt="${escapeHtml(logoAlt(study))}" loading="lazy" decoding="async"></span>
                         </a>
                         <div class="case-study-card__content">
                             <p class="case-study-card__brand">${company} · ${industry}</p>
@@ -118,9 +127,9 @@ function schemaFor(study) {
         url,
         mainEntityOfPage: url,
         articleSection: study.industry,
-        genre: 'Transparent fictionalized case study',
+        genre: study.fictional ? 'Transparent fictionalized case study' : 'Digital product case study',
         isAccessibleForFree: true,
-        datePublished: BUILD_DATE,
+        datePublished: study.datePublished || DEFAULT_PUBLISHED_DATE,
         dateModified: BUILD_DATE,
         author: {
           '@type': 'Organization',
@@ -141,7 +150,9 @@ function schemaFor(study) {
         about: {
           '@type': 'Thing',
           name: `${study.industry} digital product delivery scenario`,
-          description: 'The company identity and outcomes in this case study are fictionalized and illustrative.'
+          description: study.fictional
+            ? 'The company identity and outcomes in this case study are fictionalized and illustrative.'
+            : `A digital product engagement for ${study.company}.`
         },
         isPartOf: {
           '@type': 'CollectionPage',
@@ -189,7 +200,7 @@ function renderPage(study, related) {
     <meta property="og:image:alt" content="${title}">
     <meta property="og:site_name" content="Soance">
     <meta property="article:section" content="${industry}">
-    <meta property="article:published_time" content="${BUILD_DATE}">
+    <meta property="article:published_time" content="${escapeHtml(study.datePublished || DEFAULT_PUBLISHED_DATE)}">
     <meta property="article:modified_time" content="${BUILD_DATE}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="${title} | Soance">
@@ -206,7 +217,7 @@ function renderPage(study, related) {
     <link rel="stylesheet" type="text/css" href="/css/animate.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/responsive.css">
-    <link rel="stylesheet" type="text/css" href="/css/case-studies.css?v=20260714-search-ready">
+    <link rel="stylesheet" type="text/css" href="/css/case-studies.css?v=20260722-source-cases">
     <script type="application/ld+json">${jsonLd(schemaFor(study))}</script>
 </head>
 <body class="case-page">
@@ -240,7 +251,7 @@ function renderPage(study, related) {
             <div class="case-header-band"></div>
             <section class="case-detail-hero">
                 <div class="container">
-                    <p class="case-detail-client">${company} · ${industry} · Fictional client</p>
+                    <p class="case-detail-client">${company} · ${industry} · ${projectLabel(study)}</p>
                     <h1>${title}</h1>
                     <div class="case-detail-meta"><span class="case-detail-meta__icon" aria-hidden="true"><i class="fa fa-clock-o"></i></span><span>Reading time about ${Number(study.readingMinutes) || 5} mins</span></div>
                 </div>
@@ -291,7 +302,7 @@ function updateListing(studies) {
     '@id': `${SITE_URL}/case-studies.html#collection`,
     name: 'Soance Case Studies',
     url: `${SITE_URL}/case-studies.html`,
-    description: 'A library of transparent, fictionalized digital product and technology transformation case studies from Soance Innovations.',
+    description: 'A library of client projects and transparent fictionalized scenarios covering digital product, design, and technology transformation.',
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: studies.length,
