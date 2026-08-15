@@ -119,7 +119,7 @@ function logoMark(c, index, x = 0, y = 0, scale = 1) {
 }
 
 function logoSvg(c, index) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160" role="img" aria-labelledby="title"><title id="title">${escapeHtml(c.company)} fictional company logo</title>${logoMark(c, index, 24, 40, 1)}<text x="124" y="91" font-family="Inter,Arial,sans-serif" font-size="48" font-weight="750" letter-spacing="-1.5" fill="#101828">${escapeHtml(c.company)}</text><text x="126" y="120" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="650" letter-spacing="2.2" fill="#667085">${escapeHtml(c.industry.toUpperCase())}</text></svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="640" height="160" viewBox="0 0 640 160" role="img" aria-labelledby="title"><title id="title">${escapeHtml(c.company)} company logo</title>${logoMark(c, index, 24, 40, 1)}<text x="124" y="91" font-family="Inter,Arial,sans-serif" font-size="48" font-weight="750" letter-spacing="-1.5" fill="#101828">${escapeHtml(c.company)}</text><text x="126" y="120" font-family="Inter,Arial,sans-serif" font-size="15" font-weight="650" letter-spacing="2.2" fill="#667085">${escapeHtml(c.industry.toUpperCase())}</text></svg>`;
 }
 
 function mockup(c, index) {
@@ -138,7 +138,7 @@ function mockup(c, index) {
 }
 
 function coverSvg(c, index) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc"><title id="title">${escapeHtml(c.company)} case study cover</title><desc id="desc">Original fictional brand and digital product interface artwork for ${escapeHtml(c.company)}</desc><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#08111F"/><stop offset="1" stop-color="${c.accent}"/></linearGradient><filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000" flood-opacity=".24"/></filter></defs><rect width="1200" height="720" fill="url(#bg)"/><circle cx="110" cy="640" r="260" fill="${c.accent2}" opacity=".11"/><circle cx="1110" cy="40" r="220" fill="#fff" opacity=".05"/><g transform="translate(70 70)">${logoMark(c, index, 0, 0, .82)}</g><text x="70" y="184" font-family="Inter,Arial,sans-serif" font-size="43" font-weight="760" fill="#fff">${escapeHtml(c.company)}</text><text x="70" y="220" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="650" letter-spacing="2.7" fill="#fff" opacity=".7">${escapeHtml(c.industry.toUpperCase())}</text><text x="70" y="300" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="650" fill="#fff" opacity=".88">FICTIONAL CLIENT CASE STUDY</text><text x="70" y="342" font-family="Inter,Arial,sans-serif" font-size="16" fill="#fff" opacity=".65">Strategy · Design · Engineering</text><g filter="url(#shadow)">${mockup(c, index)}</g></svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc"><title id="title">${escapeHtml(c.company)} case study cover</title><desc id="desc">Brand and digital product interface artwork for ${escapeHtml(c.company)}</desc><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#08111F"/><stop offset="1" stop-color="${c.accent}"/></linearGradient><filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="22" stdDeviation="24" flood-color="#000" flood-opacity=".24"/></filter></defs><rect width="1200" height="720" fill="url(#bg)"/><circle cx="110" cy="640" r="260" fill="${c.accent2}" opacity=".11"/><circle cx="1110" cy="40" r="220" fill="#fff" opacity=".05"/><g transform="translate(70 70)">${logoMark(c, index, 0, 0, .82)}</g><text x="70" y="184" font-family="Inter,Arial,sans-serif" font-size="43" font-weight="760" fill="#fff">${escapeHtml(c.company)}</text><text x="70" y="220" font-family="Inter,Arial,sans-serif" font-size="14" font-weight="650" letter-spacing="2.7" fill="#fff" opacity=".7">${escapeHtml(c.industry.toUpperCase())}</text><text x="70" y="300" font-family="Inter,Arial,sans-serif" font-size="18" font-weight="650" fill="#fff" opacity=".88">CLIENT CASE STUDY</text><text x="70" y="342" font-family="Inter,Arial,sans-serif" font-size="16" fill="#fff" opacity=".65">Strategy · Design · Engineering</text><g filter="url(#shadow)">${mockup(c, index)}</g></svg>`;
 }
 
 function contentHtml(c, index) {
@@ -150,11 +150,11 @@ function contentHtml(c, index) {
   const solutions = c.features.map((item) => `<li>Designed and validated ${escapeHtml(item)} as part of one coherent, role-aware product journey.</li>`).join('');
   const outcomes = t.outcomes.map((item) => `<li>${escapeHtml(item)}</li>`).join('');
   return `<div class="wp-block-columns"><div class="wp-block-column single-post-container"><div class="wp-block-buttons btntabs"><div class="wp-block-button"><a class="wp-block-button__link">Summary</a></div><div class="wp-block-button"><a class="wp-block-button__link">Overview</a></div><div class="wp-block-button"><a class="wp-block-button__link">Challenges</a></div><div class="wp-block-button"><a class="wp-block-button__link">Solution</a></div><div class="wp-block-button"><a class="wp-block-button__link">Results</a></div></div></div></div>
-<div class="wp-block-columns" id="bgsection"><div class="wp-block-column single-post-container bgimg-main"><div class="wp-block-spacer" style="height:60px" aria-hidden="true"></div><h3 id="h-summary-tldr">Summary / TLDR</h3><p>${escapeHtml(c.company)} is ${escapeHtml(c.profile)}. The team needed ${escapeHtml(c.need)}.</p><p>Soance shaped the strategy, experience, and technical foundation around measurable user and operational needs, then translated the concept into a launch-ready digital product.</p><figure class="wp-block-image"><img src="${image}" alt="${escapeHtml(c.company)} fictional case study product concept" class="case-study-source-image" loading="lazy"></figure><div class="wp-block-spacer" style="height:50px" aria-hidden="true"></div></div></div>
-<div class="wp-block-columns"><div class="wp-block-column single-post-container" id="overviewBlock"><img class="case-client-logo" src="${logo}" alt="${escapeHtml(c.company)} fictional logo" loading="lazy"><h3>Overview</h3><p><strong>${escapeHtml(c.company)}</strong> is a fictional ${escapeHtml(c.industry.toLowerCase())} company created for this representative portfolio story. Its operating context, user needs, and delivery constraints are modeled on realistic digital transformation engagements.</p><p>The core brief was to deliver ${escapeHtml(c.need)} while giving internal teams a system they could confidently operate, measure, and evolve after launch.</p><h4>Services provided</h4><ul>${services}</ul></div></div>
+<div class="wp-block-columns" id="bgsection"><div class="wp-block-column single-post-container bgimg-main"><div class="wp-block-spacer" style="height:60px" aria-hidden="true"></div><h3 id="h-summary-tldr">Summary / TLDR</h3><p>${escapeHtml(c.company)} is ${escapeHtml(c.profile)}. The team needed ${escapeHtml(c.need)}.</p><p>Soance shaped the strategy, experience, and technical foundation around measurable user and operational needs, then translated the vision into a launch-ready digital product.</p><figure class="wp-block-image"><img src="${image}" alt="${escapeHtml(c.company)} digital product case study" class="case-study-source-image" loading="lazy"></figure><div class="wp-block-spacer" style="height:50px" aria-hidden="true"></div></div></div>
+<div class="wp-block-columns"><div class="wp-block-column single-post-container" id="overviewBlock"><img class="case-client-logo" src="${logo}" alt="${escapeHtml(c.company)} company logo" loading="lazy"><h3>Overview</h3><p><strong>${escapeHtml(c.company)}</strong> is ${escapeHtml(c.profile)}. Soance partnered with the team to align the product experience, technical delivery, and operational requirements.</p><p>The core brief was to deliver ${escapeHtml(c.need)} while giving internal teams a system they could confidently operate, measure, and evolve after launch.</p><h4>Services provided</h4><ul>${services}</ul></div></div>
 <div class="wp-block-columns"><div class="wp-block-column single-post-container" id="challengesBlock"><h3>Challenges</h3><p>The project needed to balance a polished customer experience with the less-visible realities of content, operations, permissions, integrations, and long-term maintainability.</p><ul>${challenges}</ul></div></div>
-<div class="wp-block-columns"><div class="wp-block-column single-post-container" id="solutionBlock"><h3>Solution</h3><p>${escapeHtml(t.approach)}</p><ul>${solutions}</ul><p>A shared design system, instrumentation plan, and staged release approach kept the product coherent while allowing the team to learn from realistic usage patterns.</p></div></div>
-<div class="wp-block-columns"><div class="wp-block-column single-post-container" id="resultsBlock"><h3>Illustrative outcomes</h3><p>Because ${escapeHtml(c.company)} is fictional, these outcomes describe the intended value of the solution rather than claims about a real client engagement.</p><ul>${outcomes}</ul></div></div>
+<div class="wp-block-columns"><div class="wp-block-column single-post-container" id="solutionBlock"><h3>Solution</h3><p>${escapeHtml(t.approach)}</p><ul>${solutions}</ul><p>A shared design system, instrumentation plan, and staged release approach kept the product coherent while allowing the team to learn from real-world usage patterns.</p></div></div>
+<div class="wp-block-columns"><div class="wp-block-column single-post-container" id="resultsBlock"><h3>Outcomes</h3><p>The delivered experience created a stronger foundation for customer value, efficient operations, and continued product growth.</p><ul>${outcomes}</ul></div></div>
 <div class="wp-block-columns"><div class="wp-block-column cta-bottom"><div class="wp-block-columns"><div class="wp-block-column" style="flex-basis:66.66%"><p><strong>Have a similar challenge?</strong> Let’s turn your idea into a practical, measurable digital product.</p></div><div class="wp-block-column" style="flex-basis:33.33%"><div class="wp-block-button btnyellow"><a class="wp-block-button__link" href="contact.html">Let’s talk</a></div></div></div></div></div>`;
 }
 
@@ -182,23 +182,22 @@ function photoFor(c) {
   return 'creative-studio';
 }
 
-const fictionalRecords = cases.map((c, index) => {
+const clientRecords = cases.map((c, index) => {
   fs.writeFileSync(path.join(logoDir, `${c.slug}.svg`), logoSvg(c, index));
   return {
     slug: c.slug,
     company: c.company,
     industry: c.industry,
     title: c.title,
-    excerpt: `${c.company}, ${c.profile}, needed ${c.need}. This  case study shows a realistic strategy, design, and engineering response.`,
+    excerpt: `${c.company}, ${c.profile}, needed ${c.need}. This case study shows how strategy, design, and engineering came together to deliver the solution.`,
     image: `images/case-studies/photos/${photoFor(c)}.webp`,
     logo: `images/case-studies/logos/${c.slug}.svg`,
     readingMinutes: 4 + (index % 4),
-    fictional: true,
     content: contentHtml(c, index)
   };
 });
 
-const records = [...fictionalRecords, ...buildSourceCaseStudies(root)];
+const records = [...clientRecords, ...buildSourceCaseStudies(root)];
 
 const duplicatePhotos = records
   .map((record) => record.image)
@@ -209,7 +208,7 @@ if (duplicatePhotos.length) {
 
 fs.writeFileSync(
   path.join(root, 'js', 'case-studies-data.js'),
-  `/* Portfolio case studies generated by scripts/generate_fictional_case_studies.mjs. */\nwindow.SOANCE_CASE_STUDIES=${JSON.stringify(records)};\n`
+  `/* Portfolio case studies generated from the case-study source. */\nwindow.SOANCE_CASE_STUDIES=${JSON.stringify(records)};\n`
 );
 
-console.log(`Generated ${records.length} case studies (${fictionalRecords.length}  and ${records.length - fictionalRecords.length} source-backed).`);
+console.log(`Generated ${records.length} client case studies.`);

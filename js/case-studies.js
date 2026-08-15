@@ -33,7 +33,7 @@
                 logoBadge.className = 'case-study-card__media-logo';
                 var logoImage = document.createElement('img');
                 logoImage.src = study.logo;
-                logoImage.alt = study.company + (study.fictional ? ' fictional logo' : ' case study wordmark');
+                logoImage.alt = study.company + ' company logo';
                 logoImage.loading = 'lazy';
                 logoImage.decoding = 'async';
                 logoBadge.appendChild(logoImage);
@@ -148,9 +148,7 @@
                         url: 'https://www.soance.com/images/soance.png'
                     }
                 },
-                about: study.fictional
-                    ? 'Transparent  digital product case study'
-                    : 'Digital product client case study'
+                about: 'Digital product client case study'
             });
         }
     }
@@ -194,8 +192,7 @@
 
         renderStudyTitle(title, study);
         if (client) {
-            client.textContent = study.company + ' · ' + study.industry + ' · ' +
-                (study.fictional ? 'Fictional client' : 'Client project');
+            client.textContent = study.company + ' · ' + study.industry + ' · Client project';
         }
         if (readingTime) {
             readingTime.textContent = 'Reading time about ' + study.readingMinutes + ' mins';

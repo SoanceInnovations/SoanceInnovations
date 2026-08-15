@@ -404,30 +404,6 @@ body.case-page::after {
     margin: 0 0 42px;
 }
 
-.case-study-content .case-fictional-note {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px 16px;
-    margin-bottom: 30px;
-    padding: 14px 18px;
-    border: 1px solid rgba(255, 255, 255, .34);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, .1);
-    color: #fff;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-.case-study-content .case-fictional-note strong,
-.case-study-content .case-fictional-note span {
-    color: #fff;
-}
-
-.case-study-content .case-fictional-note strong {
-    font-weight: 700;
-}
-
 .case-study-content #overviewBlock,
 .case-study-content #challengesBlock,
 .case-study-content #solutionBlock,

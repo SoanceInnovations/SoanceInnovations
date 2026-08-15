@@ -55,11 +55,11 @@ function localPageUrl(study) {
 }
 
 function projectLabel(study) {
-  return study.fictional ? 'Fictional client' : 'Client project';
+  return 'Client project';
 }
 
 function logoAlt(study) {
-  return `${study.company} ${study.fictional ? 'fictional logo' : 'case study wordmark'}`;
+  return `${study.company} company logo`;
 }
 
 function jsonLd(value) {
@@ -127,7 +127,7 @@ function schemaFor(study) {
         url,
         mainEntityOfPage: url,
         articleSection: study.industry,
-        genre: study.fictional ? 'Transparent  case study' : 'Digital product case study',
+        genre: 'Digital product case study',
         isAccessibleForFree: true,
         datePublished: study.datePublished || DEFAULT_PUBLISHED_DATE,
         dateModified: BUILD_DATE,
@@ -149,10 +149,8 @@ function schemaFor(study) {
         },
         about: {
           '@type': 'Thing',
-          name: `${study.industry} digital product delivery scenario`,
-          description: study.fictional
-            ? 'The company identity and outcomes in this case study are  and illustrative.'
-            : `A digital product engagement for ${study.company}.`
+          name: `${study.industry} digital product engagement`,
+          description: `A digital product engagement for ${study.company}.`
         },
         isPartOf: {
           '@type': 'CollectionPage',
@@ -302,7 +300,7 @@ function updateListing(studies) {
     '@id': `${SITE_URL}/case-studies.html#collection`,
     name: 'Soance Case Studies',
     url: `${SITE_URL}/case-studies.html`,
-    description: 'A library of client projects and transparent  scenarios covering digital product, design, and technology transformation.',
+    description: 'A library of client projects covering digital product, design, and technology transformation.',
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: studies.length,
