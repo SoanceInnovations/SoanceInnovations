@@ -127,7 +127,7 @@ function schemaFor(study) {
         url,
         mainEntityOfPage: url,
         articleSection: study.industry,
-        genre: study.fictional ? 'Transparent fictionalized case study' : 'Digital product case study',
+        genre: study.fictional ? 'Transparent  case study' : 'Digital product case study',
         isAccessibleForFree: true,
         datePublished: study.datePublished || DEFAULT_PUBLISHED_DATE,
         dateModified: BUILD_DATE,
@@ -151,7 +151,7 @@ function schemaFor(study) {
           '@type': 'Thing',
           name: `${study.industry} digital product delivery scenario`,
           description: study.fictional
-            ? 'The company identity and outcomes in this case study are fictionalized and illustrative.'
+            ? 'The company identity and outcomes in this case study are  and illustrative.'
             : `A digital product engagement for ${study.company}.`
         },
         isPartOf: {
@@ -302,7 +302,7 @@ function updateListing(studies) {
     '@id': `${SITE_URL}/case-studies.html#collection`,
     name: 'Soance Case Studies',
     url: `${SITE_URL}/case-studies.html`,
-    description: 'A library of client projects and transparent fictionalized scenarios covering digital product, design, and technology transformation.',
+    description: 'A library of client projects and transparent  scenarios covering digital product, design, and technology transformation.',
     mainEntity: {
       '@type': 'ItemList',
       numberOfItems: studies.length,

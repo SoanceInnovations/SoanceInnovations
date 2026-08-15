@@ -149,7 +149,7 @@
                     }
                 },
                 about: study.fictional
-                    ? 'Transparent fictionalized digital product case study'
+                    ? 'Transparent  digital product case study'
                     : 'Digital product client case study'
             });
         }
