@@ -236,6 +236,8 @@ def update_page(path):
     source = re.sub(r'<(?:link|script)\b[^>]*(?:href|src)="sweetalert-master/[^\"]+"[^>]*>(?:</script>)?\s*', "", source)
     source = re.sub(r'<script[^>]*src="js/wow.js"[^>]*></script>\s*', "", source)
     source = source.replace("new WOW().init();", "")
+    # Existing visitors should receive the visibility and loading fixes too.
+    source = re.sub(r'((?:href|src)="/?(?:css/style\.css|js/main\.js))(?:\?[^\"]*)?"', r'\1?v=20260909-seo"', source)
     # Show content immediately instead of waiting for every third-party widget.
     source = re.sub(r'<div id="preloader">\s*<div id="status">.*?</div>\s*</div>\s*', "", source, flags=re.S)
     source = re.sub(r'<noscript id="nojs-content">.*?</noscript>\s*', "", source, flags=re.S)
