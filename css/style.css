@@ -387,9 +387,6 @@ line-height: 1; //-webkit-transform:translateY(0px);//-moz-transform:translateY(
 div#preloader {
     background: #222d47;
 }
-#faq {
-    display: none;
-}
 .work_section {
     padding: 50px 0;
     padding-bottom: 100px;

@@ -131,6 +131,7 @@ def main():
         require("fictional" in content.lower(), f"{name}: missing case-study context")
         for link in re.findall(r"\]\((https://www\.soance\.com/[^)]+)\)", content):
             require((ROOT / urlparse(link).path.lstrip("/")).is_file(), f"{name}: broken link {link}")
+    require(not re.search(r"#faq\s*\{[^}]*display\s*:\s*none", (ROOT / "css/style.css").read_text()), "FAQ content must remain visible to match its structured data")
     if errors:
         print("\n".join(sorted(set(errors))))
         sys.exit(1)
