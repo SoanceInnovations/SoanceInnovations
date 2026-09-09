@@ -185,6 +185,12 @@
             return;
         }
 
+        // Keep old shared query-string links pointing to the crawlable article.
+        if (window.location.pathname === '/case-study.html') {
+            window.location.replace('/case-studies/' + encodeURIComponent(study.slug) + '.html' + window.location.hash);
+            return;
+        }
+
         updateMetadata(study);
         var title = document.getElementById('case-study-title');
         var client = document.getElementById('case-study-client');

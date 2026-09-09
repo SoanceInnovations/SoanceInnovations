@@ -11,16 +11,7 @@
           });
       });
   });
-  //pre loader
-  $('body').addClass('preloader-running');
-  $('.master_wrap').css('visibility', 'hidden');
-  $(window).load(function() {
-      $("#status").fadeOut(500);
-      $("#preloader").delay(500).fadeOut(1000);
-      $('body').removeClass('preloader-running');
-      $('body').addClass('preloader-done');
-      $(".master_wrap").delay(500).css('visibility', 'visible');
-  });
+  // Keep the content visible while images and third-party widgets load.
 
   $(document).ready(function() {
 
