@@ -2,6 +2,26 @@
 
 Source: https://www.soance.com/privacy.html
 
+## S3 Camera Privacy Policy
+
+Publisher: Soance Innovations LLP. Effective date: October 12, 2026.
+
+S3 Camera uses your camera to take photos and videos. Microphone permission is optional and is used for video audio. The app does not write captures to your phone's shared gallery. Captures are temporarily held in the app's private storage while waiting for upload, including when a transfer fails or network access is unavailable. From version 1.0.8, user-started video recording can continue after Home or screen lock. A silent foreground notification provides Pause/Resume and Stop controls; notification permission enables notification-shade controls. Camera and microphone privacy indicators remain active. Recording does not start automatically on reboot, and Android privacy controls or battery restrictions can interrupt it.
+
+The app sends captures over HTTPS directly to the Amazon S3 bucket you configure. It also reads that bucket to display your gallery and moves objects between your configured media and archive prefixes when you archive or restore them. AWS processes stored content under your AWS account's settings and applicable AWS terms. The app publisher does not operate a separate media collection server.
+
+Bucket settings and AWS credentials are stored locally using encryption protected by Android Keystore. Credentials are used to sign requests to AWS. The access key identifier and any session token are sent to AWS as part of authenticated requests. The app does not include advertising or analytics SDKs and does not request location, contacts, or shared photo-library access.
+
+The app removes local completed capture files after verifying successful upload. Failed and interrupted captures can remain locally to prevent loss. Uninstalling the app removes its private local data and settings; it does not remove objects from S3.
+
+Gallery deletion archives a capture in a separate folder. It does not permanently delete the content. Versioning can retain previous object versions and delete markers. The bucket owner controls permanent deletion, retention, access permissions, and lifecycle rules through AWS; these actions are not available in the app. Camera and microphone permissions can be revoked in Android settings.
+
+This app is a general-purpose camera utility and is not directed to children. Changes to this policy should be published at the same public policy URL.
+
+Contact: rajilesh@soance.com.
+
+## Website privacy statement
+
 WHAT DO WE DO WITH YOUR INFORMATION?
 
 When you purchase something from our store, as part of the buying and selling process, we collect the personal information you give us such as your name, address and email address.
@@ -80,7 +100,7 @@ If you would like to: access, correct, amend or delete any personal information 
                                         Pulliode, Kadirur,
                                         Kannur,
                                         Kerala,
-                                        India - 670642 [Re: Privacy Compliance Officer] [622 Manglam Electronic Market Jaipur Rajasthan India 302001] ----
+                                        India - 670642 [Re: Privacy Compliance Officer]  ----
 
 If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at info@soance.com or mailing us at: I/478A,
                                         Pulliode, Kadirur,
@@ -90,6 +110,6 @@ If after you opt-in, you change your mind, you may withdraw your consent for us 
 
 [Re: Privacy Compliance Officer]
 
-[622 Manglam Electronic Market Jaipur Rajasthan India 302001]
+
 
 ----
