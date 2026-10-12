@@ -54,7 +54,7 @@ Only regular priced items may be refunded, unfortunately sale items cannot be re
 
 Exchanges (if applicable)
 
-We only replace items if they are defective or damaged.  If you need to exchange it for the same item, send us an email at [___Company Contact Email___] and send your item to: 622 Manglam Electronic Market Jaipur Rajasthan India 302001.
+We only replace items if they are defective or damaged.  If you need to exchange it for the same item, send us an email at [___Company Contact Email___] and contact us for return shipping instructions.
 
 Gifts
 
@@ -64,7 +64,7 @@ If the item wasn’t marked as a gift when purchased, or the gift giver had the 
 
 Shipping
 
-To return your product, you should mail your product to: 622 Manglam Electronic Market Jaipur Rajasthan India 302001.
+To return your product, contact us for return shipping instructions.
 
 You will be responsible for paying for your own shipping costs for returning your item. Shipping costs are non-refundable. If you receive a refund, the cost of return shipping will be deducted from your refund.
 
