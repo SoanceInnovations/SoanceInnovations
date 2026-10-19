@@ -10,8 +10,10 @@ The case-study library includes client projects and explicitly fictionalized sce
 
 - [About Soance | Software Development & Technology Consulting](https://www.soance.com/about.html.md): Meet Soance Innovations LLP, a Kerala-based technology partner building websites, mobile apps, CRMs, AI and computer vision solutions for businesses.
 - [Software, Web & Mobile App Case Studies | Soance](https://www.soance.com/case-studies.html.md): Explore Soance's web, mobile app and software case studies, including client projects and clearly labeled fictional scenarios across business sectors.
+- [Camera 1.0.8 background recording demonstration](https://www.soance.com/cmra-background-recording-demo.html.md): Camera 1.0.8 background recording demonstration
 - [Contact Soance | Discuss Your Website, App or Software Project](https://www.soance.com/contact.html.md): Discuss your website, app or software project with Soance in Kannur, Kerala. Call +91 8217445213 or email info@soance.com to get started.
 - [Web, Mobile App & Custom Software Development | Soance](https://www.soance.com/index.md): Soance builds websites, web and mobile apps, custom software, automation and AI solutions. Based in Kannur, Kerala, serving India and global businesses.
+- [Soance — Today AI Aligns With Bold Dreams](https://www.soance.com/landing-page.html.md): Soance Innovations — clear, precise automation. AI automation, AI integration, and AI agent development for growing businesses.
 - [Rajilesh Panoli | Founder & CEO, Soance Innovations](https://www.soance.com/me.html.md): Connect with Rajilesh Panoli, Founder and CEO of Soance Innovations, in Whitefield, Bangalore. Find his business contact details and company website.
 
 ## Case studies
@@ -89,6 +91,8 @@ The case-study library includes client projects and explicitly fictionalized sce
 - [Privacy Policy | Soance Innovations](https://www.soance.com/privacy.html.md): Read the Soance Innovations privacy policy, including how information is collected, used and protected, and how to contact us about your privacy.
 - [Refund Policy | Soance Innovations](https://www.soance.com/refund-policy.html.md): Read the Soance Innovations refund policy for information about returns, refund eligibility, exchanges, shipping and how to contact our team.
 - [Terms of Service | Soance Innovations](https://www.soance.com/terms-of-service.html.md): Read the Soance Innovations terms of service covering use of the website, purchases, user submissions, third-party services and limitations of liability.
+- [WhatsApp Assistant Privacy Policy | Soance](https://www.soance.com/whatsapp-privacy.html.md): How Soance's WhatsApp assistant handles messages, AI processing, storage, retention, human support and privacy requests.
+- [WhatsApp Assistant Terms | Soance](https://www.soance.com/whatsapp-terms.html.md): Terms for Soance's WhatsApp AI assistant, including availability, answer limitations, human support, responsible use and privacy.
 
 ## Optional
 

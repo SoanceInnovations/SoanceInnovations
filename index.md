@@ -126,23 +126,23 @@ Build the infrastructure to grow without limits
 
 Explore realistic project scenarios showing how product thinking, experience design, and engineering can solve operational and growth challenges.
 
-Loomora · Fictional client
+Vissco · Consumer healthcare
 
-## Taking Independent Craft Brands Global with the Loomora Marketplace App
+## Rebuilding Vissco’s Digital Product-Discovery Platform
 
-An original mobile marketplace concept connecting independent craft makers with design-conscious buyers.
+Vissco replaced its legacy website with a responsive platform to organize more than 1,000 orthopedic products while preserving usability and search visibility.
 
-VendraCart · Fictional client
+Bajaj AMC · Business process digitisation
 
-## Designing a Faster B2B E-commerce Experience for VendraCart
+## Turning Paper-Heavy Workflows into Mobile-First Processes
 
-A realistic wholesale commerce concept for tiered pricing, bulk ordering, and rapid repeat purchases.
+Bajaj AMC’s work focused on digitising paper-heavy business processes into mobile-first workflows.
 
-PixelCrest · Fictional client
+London Insurance Academy · Professional education
 
-## Rebuilding PixelCrest’s Website for Speed, Security, and Qualified Leads
+## Building a Flexible LMS for London Insurance Academy
 
-A fictional agency redesign focused on clearer expertise, stronger performance, and more useful conversion paths.
+An accessible learning platform designed for varied course formats, assessments, learner progress, discussion, and a growing professional audience.
 
 ## Our Engagement Process
 

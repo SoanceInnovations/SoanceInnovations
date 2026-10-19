@@ -26,6 +26,8 @@ META = {
     "cubesolv-privacy.html": ("CubeSolv Privacy Policy | Soance", "Read how CubeSolv handles privacy, on-device camera processing, locally stored progress and personal data. Contact Soance for privacy questions."),
     "privacy.html": ("Privacy Policy | Soance Innovations", "Read the Soance Innovations privacy policy, including how information is collected, used and protected, and how to contact us about your privacy."),
     "terms-of-service.html": ("Terms of Service | Soance Innovations", "Read the Soance Innovations terms of service covering use of the website, purchases, user submissions, third-party services and limitations of liability."),
+    "whatsapp-privacy.html": ("WhatsApp Assistant Privacy Policy | Soance", "How Soance's WhatsApp assistant handles messages, AI processing, storage, retention, human support and privacy requests."),
+    "whatsapp-terms.html": ("WhatsApp Assistant Terms | Soance", "Terms for Soance's WhatsApp AI assistant, including availability, answer limitations, human support, responsible use and privacy."),
     "refund-policy.html": ("Refund Policy | Soance Innovations", "Read the Soance Innovations refund policy for information about returns, refund eligibility, exchanges, shipping and how to contact our team."),
     "pay.html": ("Make a Payment | Soance Innovations", "Make a payment to Soance Innovations for an agreed project or service. Contact our team if you need help with your payment."),
     "404.html": ("Page Not Found | Soance", "This page could not be found. Explore Soance's website, app and software development services, case studies, or contact our team."),
@@ -302,7 +304,7 @@ def discovery():
         (ROOT / md_rel).write_text(text)
         source = replace_link(path.read_text(), "alternate", BASE + md_rel, ' type="text/markdown"')
         path.write_text(source)
-        section = "Case studies" if rel.startswith("case-studies/") else "Service areas" if rel.startswith("website-development-company-in-") else "Policies" if "privacy" in rel or "policy" in rel or rel == "terms-of-service.html" else "Company and services"
+        section = "Case studies" if rel.startswith("case-studies/") else "Service areas" if rel.startswith("website-development-company-in-") else "Policies" if "privacy" in rel or "policy" in rel or rel in {"terms-of-service.html", "whatsapp-terms.html"} else "Company and services"
         desc = soup.find("meta", attrs={"name": "description"})["content"]
         sections[section].append(f"- [{plain(soup.title)}]({BASE + md_rel}): {desc}")
         full.append(text)

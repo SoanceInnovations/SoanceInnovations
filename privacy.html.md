@@ -110,7 +110,7 @@ If you would like to: access, correct, amend or delete any personal information 
                                         Pulliode, Kadirur,
                                         Kannur,
                                         Kerala,
-                                        India - 670642 [Re: Privacy Compliance Officer]  ----
+                                        India - 670642 [Re: Privacy Compliance Officer] ----
 
 If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at anytime, by contacting us at info@soance.com or mailing us at: I/478A,
                                         Pulliode, Kadirur,
@@ -119,7 +119,5 @@ If after you opt-in, you change your mind, you may withdraw your consent for us 
                                         India - 670642
 
 [Re: Privacy Compliance Officer]
-
-
 
 ----

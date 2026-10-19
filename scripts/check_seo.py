@@ -101,8 +101,15 @@ def main():
                 if node.get("@type") == "BreadcrumbList":
                     items = node["itemListElement"]
                     require(len(items) >= 2 and [i["position"] for i in items] == list(range(1, len(items) + 1)), f"{rel}: invalid breadcrumb positions")
-                if node.get("@type") == "ItemList":
-                    require(node["numberOfItems"] == len(list(ROOT.glob("case-studies/*.html"))), f"{rel}: collection size mismatch")
+                if node.get("@type") == "ItemList" and rel == "case-studies.html":
+                    cards = soup.select(".case-study-card__title a")
+                    items = node.get("itemListElement", [])
+                    require(node.get("numberOfItems") == len(cards), f"{rel}: collection size differs from visible cards")
+                    require([(item.get("name"), item.get("url")) for item in items] ==
+                            [(plain(link), urljoin(url, link["href"])) for link in cards],
+                            f"{rel}: collection items differ from visible cards")
+                    require([item.get("position") for item in items] == list(range(1, len(cards) + 1)),
+                            f"{rel}: collection positions differ from visible card order")
                 if node.get("@type") == "FAQPage":
                     details = soup.select("#faq details")
                     require(len(details) == len(node["mainEntity"]), f"{rel}: FAQ count mismatch")
