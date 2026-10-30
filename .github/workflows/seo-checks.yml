@@ -1,0 +1,30 @@
+name: SEO checks
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: scripts/requirements-seo.txt
+      - run: npm ci
+      - run: python -m pip install -r scripts/requirements-seo.txt
+      - run: npm run check:seo
+      - run: npm run build
+      - name: Require generated files to be committed
+        run: |
+          git diff --exit-code
+          test -z "$(git ls-files --others --exclude-standard)"

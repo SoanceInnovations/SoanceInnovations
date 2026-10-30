@@ -1,0 +1,15 @@
+{
+  "name": "soance-website",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.cjs -i css/tailwind.input.css -o css/tailwind.min.css --minify && lessc --clean-css less/site.less css/legacy.min.css",
+    "build:seo": "python3 scripts/build_seo.py",
+    "build": "npm run build:seo && npm run build:css",
+    "check:seo": "python3 scripts/check_seo.py"
+  },
+  "devDependencies": {
+    "less": "4.9.1",
+    "less-plugin-clean-css": "1.6.0",
+    "tailwindcss": "3.4.17"
+  }
+}
